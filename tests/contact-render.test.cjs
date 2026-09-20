@@ -26,6 +26,11 @@ const { Contact } = require("../app/immersive/sections/Contact.tsx");
 const {
   ContactComposer,
 } = require("../app/immersive/contact/ContactComposer.tsx");
+const {
+  Skills,
+  filterRenderableAiPractices,
+} = require('../app/immersive/sections/Skills.tsx');
+
 test("server-rendered composer cannot submit personal input before hydration", () => {
   const html = renderToStaticMarkup(
     React.createElement(ContactComposer, {
@@ -49,4 +54,49 @@ test("empty contact configuration is honest before hydration", () => {
   );
   assert.match(html, /Contact channels are currently unavailable/);
   assert.doesNotMatch(html, /href="(?:mailto:|https:\/\/wa.me)/);
+});
+
+test('only evidence-backed AI practices render while the approved identity remains intact', () => {
+  const practices = [
+    {
+      id: 'verified-ai-practice',
+      name: 'Verified AI Practice',
+      description: 'Evidence-backed and eligible to render.',
+      evidence: [{ kind: 'project', id: 'ai-project' }],
+    },
+    {
+      id: 'unsupported-ai-practice',
+      name: 'Unsupported AI Practice',
+      description: 'No evidence; should not render.',
+      evidence: [],
+    },
+  ];
+
+  assert.deepEqual(
+    filterRenderableAiPractices(practices).map((practice) => practice.id),
+    ['verified-ai-practice'],
+  );
+
+  const html = renderToStaticMarkup(
+    React.createElement(Skills, {
+      groups: [],
+      projects: [
+        {
+          id: 'ai-project',
+          name: 'AI project',
+          users: 'teams',
+          problem: 'needs',
+          responsibilities: [],
+          architecture: 'system',
+          technologies: [],
+          outcomes: [],
+        },
+      ],
+      experience: [],
+      aiPractices: practices,
+    }),
+  );
+
+  assert.match(html, /Verified AI Practice/);
+  assert.doesNotMatch(html, /Unsupported AI Practice/);
 });

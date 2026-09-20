@@ -3,12 +3,12 @@ import type { PortfolioContent } from "./types";
 export const portfolio: PortfolioContent = {
   identity: {
     name: 'Shanid Cherukattil',
-    headline: 'Frontend Engineering × Product Systems',
+    headline: 'AI Creator × AI Product Engineer',
     introduction:
-      'Senior Software Engineer designing clear interfaces, dependable product systems, and polished digital experiences.',
+      'I build product experiences, product systems, and AI-enabled workflows that connect engineering, design, and real-world utility.',
     biography:
-      'I work across frontend and backend development, APIs, application services, and product architecture. My focus is building thoughtful interfaces and systems that make complex products feel clear, stable, and usable.',
-    currentRole: 'Senior Software Engineer at Notch',
+      'I work across product thinking, frontend systems, creative engineering, and AI-enabled product development. My focus is building interfaces and systems that make complex products feel clear, stable, useful, and thoughtfully designed.',
+    currentRole: 'AI Creator + AI Product Engineer',
   },
   portrait: {
     src: '/images/portrait.jpg',
@@ -160,15 +160,7 @@ export const portfolio: PortfolioContent = {
       evidence: [{ kind: 'project', id: 'fintech' }],
     },
   ],
-  aiPractices: [
-    {
-      id: 'ai-assisted-development',
-      name: 'AI-assisted development',
-      description:
-        'Using Cursor and Claude for software research, implementation, refactoring, and workflow improvement.',
-      evidence: [],
-    },
-  ],
+  aiPractices: [],
   contact: {
     email: 'shanid0cherukattil@gmail.com',
     linkedinUrl: 'https://www.linkedin.com/in/shanid0cherukattil/',

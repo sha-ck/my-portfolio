@@ -5,6 +5,14 @@ import type {
   SkillGroup,
 } from '../types';
 import s from '../portfolio.module.css';
+
+export function filterRenderableAiPractices(aiPractices: AiPractice[]) {
+  return aiPractices.filter(
+    (practice) =>
+      Array.isArray(practice.evidence) && practice.evidence.length > 0,
+  );
+}
+
 export function Skills({
   groups,
   projects,
@@ -16,6 +24,8 @@ export function Skills({
   experience: ExperienceItem[];
   aiPractices: AiPractice[];
 }) {
+  const visibleAiPractices = filterRenderableAiPractices(aiPractices);
+
   return (
     <section id="skills" className={s.section} aria-labelledby="skills-heading">
       <p className={s.eyebrow}>Capabilities / Connected by practice</p>
@@ -50,7 +60,7 @@ export function Skills({
             </div>
           </article>
         ))}
-        {aiPractices.map((practice) => (
+        {visibleAiPractices.map((practice) => (
           <article key={practice.id} className={s.practice}>
             <span className={s.skillNode} aria-hidden="true" />
             <h3>{practice.name}</h3>
@@ -58,8 +68,8 @@ export function Skills({
             <div className={s.evidence}>
               <span>Current practice</span>
               <span className={s.evidenceNote}>
-                Workflow evidence is documented separately; no AI product claim is
-                implied without verification.
+                Workflow evidence is documented separately; no AI product claim
+                is implied without verification.
               </span>
             </div>
           </article>

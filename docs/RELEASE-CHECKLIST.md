@@ -2,13 +2,17 @@
 
 ## Living System approval and release gates
 
-Status: documentation approved 2026-09-21; semantic implementation awaiting visual review. No box below is evidence of completion until checked with a recorded result. The legacy checklist remains applicable except that browser contact handoffs must not be described as confirmed message delivery.
+Status: documentation approved 2026-09-21; semantic implementation awaiting visual review. Release remains blocked on confirmed content evidence and final cutover approval. No box below is evidence of completion until checked with a recorded result. The legacy checklist remains applicable except that browser contact handoffs must not be described as confirmed message delivery.
+
+Evidence gate: the lab route may remain live as an unlinked experiment, but no production homepage replacement, metadata cutover, or contact delivery claim is valid until the evidence queue is resolved and the final approval is recorded.
 
 - [x] Explicit approval of the blueprint and implementation plan recorded before dependencies/product code change.
+- [x] Approved AI Creator + AI Product Engineer identity preserved as the portfolio's primary positioning.
+- [x] Unsupported AI claims are withheld until they are backed by explicit evidence or approved framing.
 - [ ] Existing homepage rebuilt and runtime baseline recorded, including desktop/mobile screenshots and navigation/contact behavior.
 - [ ] `/` unchanged during lab development; `/lab` unlinked, `noindex, nofollow`, excluded from sitemap.
 - [ ] Complete semantic experience reviewed before WebGL enhancement.
-- [ ] AI claims, current role, project outcomes, contact destinations and media confirmed; no placeholder claims.
+- [ ] Verified role, project outcomes, contact destinations, media rights, and AI claims are confirmed individually; no placeholder claims.
 - [ ] All six scenes, mobile, reduced motion and final cutover reviewed visually; user screenshots supplied where direct inspection is unavailable.
 - [ ] Full/lite/static, WebGL failure/context loss, JavaScript disabled, anchor refresh and resize tested.
 - [ ] Contact validation, URI encoding, Unicode/malformed input, clipboard denial and missing configuration tested. Draft/copy feedback never asserts delivery.
