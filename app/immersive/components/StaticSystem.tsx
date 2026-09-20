@@ -29,7 +29,7 @@ export function StaticSystem() {
           ry="400"
           fill="url(#system-light)"
         />
-        <g stroke="url(#system-signal)">
+        <g stroke="url(#system-signal)" data-static-scene="home">
           {Array.from({ length: 19 }, (_, i) => (
             <ellipse
               key={i}
@@ -65,6 +65,62 @@ export function StaticSystem() {
             <g key={`${cx}-${cy}`}>
               <circle cx={cx} cy={cy} r="4" fill="#EEF4F2" />
               <circle cx={cx} cy={cy} r="13" opacity=".3" />
+            </g>
+          ))}
+        </g>
+        <g stroke="url(#system-signal)" strokeWidth="1.2" opacity=".6">
+          <g data-static-scene="about">
+            <path d="M490 780V510M490 510 290 370 260 210M490 510 690 370 730 210M290 370 180 420M690 370 800 420" />
+            {[
+              [490, 510],
+              [290, 370],
+              [260, 210],
+              [690, 370],
+              [730, 210],
+              [490, 780],
+            ].map(([cx, cy]) => (
+              <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="9" />
+            ))}
+          </g>
+          <g data-static-scene="experience">
+            <path d="M500 140V850M500 250H650M500 450H350M500 650H650" />
+            {[250, 450, 650, 850].map((cy) => (
+              <circle key={cy} cx="500" cy={cy} r="12" />
+            ))}
+          </g>
+          <g data-static-scene="projects">
+            <path d="M330 330 660 330 660 660 330 660Z" />
+            {[
+              [330, 330],
+              [660, 330],
+              [330, 660],
+              [660, 660],
+            ].map(([x, y]) => (
+              <g key={`${x}-${y}`} transform={`translate(${x} ${y})`}>
+                <path d="M-85-60 0-105 85-60V60L0 105-85 60ZM-85-60 0 0 85-60M0 0V105" />
+              </g>
+            ))}
+          </g>
+          {["skills", "contact"].map((scene) => (
+            <g
+              key={scene}
+              data-static-scene={scene}
+              transform={
+                scene === "contact" ? "translate(90 100) scale(.8)" : undefined
+              }
+            >
+              <circle cx="500" cy="490" r="215" />
+              {Array.from({ length: 8 }, (_, i) => {
+                const x = 500 + Math.cos((i * Math.PI) / 4) * 280;
+                const y = 490 + Math.sin((i * Math.PI) / 4) * 280;
+                return (
+                  <g key={i}>
+                    <path d={`M500 490 ${x} ${y}`} />
+                    <circle cx={x} cy={y} r="12" />
+                  </g>
+                );
+              })}
+              <circle cx="500" cy="490" r="35" />
             </g>
           ))}
         </g>

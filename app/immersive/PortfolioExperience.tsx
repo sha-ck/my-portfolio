@@ -1,5 +1,6 @@
 import type { PortfolioContent } from "./types";
 import { Navigation } from "./components/Navigation";
+import { SceneBoundary } from "./components/SceneBoundary";
 import { StaticSystem } from "./components/StaticSystem";
 import { Hero } from "./sections/Hero";
 import { About } from "./sections/About";
@@ -16,11 +17,12 @@ export function PortfolioExperience({
   content: PortfolioContent;
 }) {
   return (
-    <div className={`${tokens.tokens} ${s.root}`}>
+    <div className={`${tokens.tokens} ${s.root}`} data-immersive-root>
       <a href="#main" className={s.skipLink}>
         Skip to content
       </a>
       <StaticSystem />
+      <SceneBoundary />
       <Navigation />
       <main id="main">
         <Hero identity={content.identity} />
@@ -31,6 +33,7 @@ export function PortfolioExperience({
           groups={content.skills}
           projects={content.projects}
           experience={content.experience}
+          aiPractices={content.aiPractices}
         />
         <Contact config={content.contact} />
       </main>

@@ -1,0 +1,40 @@
+{
+  "features": {
+    "ghcr.io/daniellindemann/dev-container-features/dotnet-usersecrets-persistence:0": {
+      "version": "0.0.1",
+      "resolved": "ghcr.io/daniellindemann/dev-container-features/dotnet-usersecrets-persistence@sha256:8a5214a74316bb86100cb45d2047cf8ec41486b34c239cf2b93f0e9053635bee",
+      "integrity": "sha256:8a5214a74316bb86100cb45d2047cf8ec41486b34c239cf2b93f0e9053635bee"
+    },
+    "ghcr.io/devcontainers/features/dotnet": {
+      "version": "2.5.0",
+      "resolved": "ghcr.io/devcontainers/features/dotnet@sha256:0fc16547ed4db6d7ff2a9f5981d2b93eb314e568affb9958029ad794f1f9a093",
+      "integrity": "sha256:0fc16547ed4db6d7ff2a9f5981d2b93eb314e568affb9958029ad794f1f9a093"
+    },
+    "ghcr.io/dhoeric/features/act:1": {
+      "version": "1.0.0",
+      "resolved": "ghcr.io/dhoeric/features/act@sha256:2e99eed677768dff36de20e856f2f6fd285a30ea868dae229e848a2871c4462d",
+      "integrity": "sha256:2e99eed677768dff36de20e856f2f6fd285a30ea868dae229e848a2871c4462d"
+    },
+    "ghcr.io/dotnet/aspire-devcontainer-feature/dotnetaspire:1": {
+      "version": "1.0.0",
+      "resolved": "ghcr.io/dotnet/aspire-devcontainer-feature/dotnetaspire@sha256:21cf32b051d4afc63f3301ac2d1343394c6be53dbf370f9bf9e7b63c78aefd9b",
+      "integrity": "sha256:21cf32b051d4afc63f3301ac2d1343394c6be53dbf370f9bf9e7b63c78aefd9b",
+      "dependsOn": ["ghcr.io/devcontainers/features/dotnet"]
+    },
+    "ghcr.io/postfinance/devcontainer-features/dotnet:1": {
+      "version": "1.0.0",
+      "resolved": "ghcr.io/postfinance/devcontainer-features/dotnet@sha256:22bce48a820093d32fb49f321fd2ab37b18e0b0e68d73b3edd13bcffb9efaf63",
+      "integrity": "sha256:22bce48a820093d32fb49f321fd2ab37b18e0b0e68d73b3edd13bcffb9efaf63"
+    },
+    "ghcr.io/wxw-matt/devcontainer-features/command_runner:0": {
+      "version": "0.5.0",
+      "resolved": "ghcr.io/wxw-matt/devcontainer-features/command_runner@sha256:ee54b2f7a82b373be5ca093726187a4c1bfa604c0ac3e07e787e68f31fca2736",
+      "integrity": "sha256:ee54b2f7a82b373be5ca093726187a4c1bfa604c0ac3e07e787e68f31fca2736"
+    },
+    "ghcr.io/wxw-matt/devcontainer-features/script_runner:0": {
+      "version": "0.5.0",
+      "resolved": "ghcr.io/wxw-matt/devcontainer-features/script_runner@sha256:d5929e40891050a71375d151f1e15c9f96bef9bc242dc6dd67b9c44197c0f3a9",
+      "integrity": "sha256:d5929e40891050a71375d151f1e15c9f96bef9bc242dc6dd67b9c44197c0f3a9"
+    }
+  }
+}

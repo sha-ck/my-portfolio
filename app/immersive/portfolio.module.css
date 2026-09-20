@@ -118,20 +118,60 @@
 .skipLink:focus {
   transform: none;
 }
-.system {
-  position: absolute;
-  top: 70px;
-  right: -5%;
-  width: 70%;
-  height: 850px;
+/* One decorative viewport layer; semantic content remains above it. */
+.system,
+.webgl {
+  position: fixed;
+  top: 90px;
+  right: -4%;
+  width: min(68vw, 980px);
+  height: calc(100svh - 110px);
+  max-height: 920px;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.9;
+}
+.system {
+  opacity: 0.65;
+}
+.webgl {
+  opacity: 0;
+  transition: opacity 600ms ease;
+}
+.root[data-canvas-ready="true"] .webgl {
+  opacity: 0.8;
+}
+.root[data-canvas-ready="true"] .system {
+  opacity: 0;
+}
+.root[data-scene]:not([data-scene="home"]) .webgl {
+  right: -14%;
+}
+.root[data-scene]:not([data-scene="home"])[data-canvas-ready="true"] .webgl {
+  opacity: 0.34;
+}
+.webgl canvas,
+.system svg {
+  width: 100% !important;
+  height: 100% !important;
 }
 .system svg {
-  width: 100%;
-  height: 100%;
   overflow: visible;
+}
+.system [data-static-scene] {
+  display: none;
+}
+.system [data-static-scene="home"] {
+  display: inline;
+}
+.root[data-scene]:not([data-scene="home"]) .system [data-static-scene="home"] {
+  display: none;
+}
+.root[data-scene="about"] .system [data-static-scene="about"],
+.root[data-scene="experience"] .system [data-static-scene="experience"],
+.root[data-scene="projects"] .system [data-static-scene="projects"],
+.root[data-scene="skills"] .system [data-static-scene="skills"],
+.root[data-scene="contact"] .system [data-static-scene="contact"] {
+  display: inline;
 }
 .hero {
   min-height: 900px;
@@ -435,6 +475,11 @@
 .skills li {
   margin: 10px 0;
 }
+.practice p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 24px 0;
+}
 .evidence {
   border-top: 1px solid var(--line);
   padding-top: 20px;
@@ -446,6 +491,11 @@
   color: var(--muted);
   font-size: 9px;
   margin-bottom: 10px;
+}
+.evidenceNote {
+  display: block;
+  color: var(--muted);
+  line-height: 1.7;
 }
 .contact {
   display: grid;
@@ -650,6 +700,11 @@
     width: 110%;
     opacity: 0.6;
   }
+  .webgl {
+    right: -18%;
+    width: 90vw;
+    height: 620px;
+  }
   .heroCopy {
     max-width: 650px;
   }
@@ -709,6 +764,12 @@
     height: 600px;
     width: 115%;
     opacity: 0.42;
+  }
+  .webgl {
+    top: 270px;
+    right: -30%;
+    width: 120vw;
+    height: 530px;
   }
   .actions {
     gap: 12px 20px;
@@ -813,4 +874,44 @@
 }
 .header:has(.noScriptNav) noscript {
   flex-basis: 100%;
+}
+
+@media (max-width: 767px) {
+  .root[data-canvas-ready="true"] .webgl {
+    opacity: 0.3;
+  }
+  .root[data-scene]:not([data-scene="home"])[data-canvas-ready="true"] .webgl {
+    opacity: 0.16;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .root .webgl {
+    display: none;
+  }
+  .root[data-canvas-ready] .system {
+    opacity: 0.42;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .primary,
+  .secondary,
+  .project,
+  .project summary > span {
+    transition:
+      border-color 180ms ease,
+      background-color 180ms ease,
+      transform 180ms ease;
+  }
+  .primary:hover,
+  .secondary:hover {
+    transform: translateY(-2px);
+  }
+  .primary:active,
+  .secondary:active {
+    transform: none;
+  }
+  .project:hover,
+  .project:focus-within {
+    border-color: var(--mint);
+  }
 }

@@ -30,17 +30,25 @@ export interface SkillGroup {
   capabilities: string[];
   evidence: { kind: "experience" | "project"; id: string }[];
 }
+export interface AiPractice {
+  id: string;
+  name: string;
+  description: string;
+  evidence: { kind: 'experience' | 'project'; id: string }[];
+}
 export interface PortfolioContent {
   identity: {
     name: string;
     headline: string;
     introduction: string;
     biography: string;
+    currentRole: string;
   };
   portrait: { src: string; alt: string; width: number; height: number };
   experience: ExperienceItem[];
   projects: ProjectCaseStudy[];
   skills: SkillGroup[];
+  aiPractices: AiPractice[];
   contact: {
     email?: string;
     whatsappInternational?: string;

@@ -1,3 +1,2 @@
 allowBuilds:
-  spellchecker: set this to true or false
   unrs-resolver: true

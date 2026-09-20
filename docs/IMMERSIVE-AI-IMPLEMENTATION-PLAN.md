@@ -179,11 +179,27 @@ export interface PortfolioContent {
 
 **Exit:** approved cutover with reproducible evidence and rollback path. No deployment or successful delivery is assumed.
 
-## Execution status ? 2026-09-21
+## Execution status — verified as of 2026-09-21
 
-- Baseline rebuilt and recorded in [baseline evidence](./IMMERSIVE-AI-BASELINE.md).
-- Semantic `/lab` and contact composer implemented. Seven focused tests cover validation, encoding and server-rendered fallback behavior; browser verification is recorded separately.
-- Current gate: user review of the complete semantic experience before WebGL. Tasks 4?5 have not started; no rendering dependencies added.
-- Existing frontend source material is retained for review. AI evidence, contact reconfirmation and release assets remain in the [content queue](./IMMERSIVE-AI-CONTENT-REVIEW.md).
-- Project visibility became optional to avoid inventing private/public status. Tests use the existing Node 24 runtime and TypeScript compiler; no new test dependency.
-- Existing independent formatting/package changes were preserved. No commit, push, deployment or homepage cutover performed.
+- Verified baseline: the repository builds successfully with the current source. Fresh evidence: `npm test` passed 12/12 checks; `npx --no-install tsc --noEmit --incremental false` returned cleanly; `npm run build` completed successfully with only the existing `next/image` warning in [app/page.tsx](../app/page.tsx).
+- Semantic `/lab` route is implemented and retained as an unlinked experiment. The route metadata, six-section anchor structure, static DOM system, mobile navigation behavior, and contact composer are in place, with the main implementation centered in [app/lab/page.tsx](../app/lab/page.tsx), [app/immersive/PortfolioExperience.tsx](../app/immersive/PortfolioExperience.tsx), [app/immersive/components/Navigation.tsx](../app/immersive/components/Navigation.tsx), [app/immersive/contact/ContactComposer.tsx](../app/immersive/contact/ContactComposer.tsx), and [app/immersive/components/sceneState.ts](../app/immersive/components/sceneState.ts).
+- Current evidence-gated work: the content stack still requires confirmation of AI case studies, exact employment history, contact ownership, and approved media/preview assets before the hybrid positioning can be declared ready for release. The queue and constraints remain documented in [docs/IMMERSIVE-AI-CONTENT-REVIEW.md](./IMMERSIVE-AI-CONTENT-REVIEW.md).
+- Current gate: semantic review is complete enough to keep the route stable, but the release path remains blocked on final content evidence and explicit approval for the production cutover. WebGL enhancement and final homepage swap remain out of scope until that evidence is confirmed.
+- The working branch contains the approved immersive implementation, but no homepage replacement, deployment, or production launch was executed.
+
+### Verified completion
+
+- Static semantic portfolio layout and six-section navigation for `/lab`.
+- Mobile menu behavior, skip link, section focus handling, and a static fallback organism.
+- Contact validation, encoding, preview, and honest no-send behavior with channel-specific fallbacks.
+- Focused automated checks for validation, encoding, and scene progress logic.
+
+### Remaining blockers
+
+- AI role/case-study evidence remains missing or unconfirmed for hybrid positioning claims.
+- Contact channel ownership (email, LinkedIn, optional WhatsApp) remains a release dependency.
+- Final homepage cutover approval is intentionally deferred by the roadmap and the documentation contract.
+
+### Next actionable task
+
+- Complete the evidence-confirmation pass against the content queue and then prepare the final release checklist for the approved cutover, without changing the production `/` route while the evidence is incomplete.
