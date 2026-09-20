@@ -1,5 +1,19 @@
 # Technical Architecture
 
+## Living System architecture (pending documentation approval)
+
+The application shape below describes current `/`; suggested legacy folders and contact API are not implemented structures. The target adds `app/lab/page.tsx` and reusable `app/immersive/` modules as specified in the implementation plan. Keep the current page, root fonts and global stylesheet unchanged during lab development.
+
+Server-rendered sections consume typed verified content. Local client boundaries own navigation and contact. A dynamically imported fixed canvas has one scene director and focused procedural geometry components. GSAP maps native section progress to camera, light and organism state. Static CSS/SVG content exists before enhancement; full/lite are optional runtime profiles.
+
+Route-specific lab metadata exports `robots: { index: false, follow: false }`. Shared components must not carry lab robots metadata into `/` at cutover. Scope new font and style rules; test inherited global element selectors. Do not import the lab route from the production homepage.
+
+Initial planned rendering dependencies: `three`, `@react-three/fiber`, `@react-three/drei`, `gsap`, with compatibility checked against installed React 18/Next 13 before selecting versions. No custom GLB, post-processing, extra animation library or framework migration is authorized. Contact uses browser handoffs, with no API route, storage or delivery backend in this scope. Both lockfiles exist; determine the maintained package manager before installation.
+
+Contract: [Blueprint](./IMMERSIVE-AI-PORTFOLIO-BLUEPRINT.md) and [Implementation plan](./IMMERSIVE-AI-IMPLEMENTATION-PLAN.md). These proposed target requirements take precedence over conflicting legacy guidance only after explicit approval.
+
+---
+
 ## 1. Stack
 
 - Next.js 13 App Router.

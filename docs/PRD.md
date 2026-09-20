@@ -1,5 +1,15 @@
 # Product Requirements Document
 
+## Living System target (pending documentation approval)
+
+Current `/` remains the frontend-focused portfolio described below. The proposed target gives frontend leadership and AI product engineering equal weight, and treats role opportunities and client projects equally. Implement it first on the unlinked, non-indexed `/lab`; no current-homepage replacement is authorized yet.
+
+The target journey retains all six sections, introduces one connected computational organism, replaces skill percentages with evidence groups, and adds a role/client contact composer. AI positioning is conditional on verified project and role evidence. Cinematic transitions are now in target scope; mandatory motion, a chatbot, backend contact delivery and speculative AI claims remain out of scope. A server/form-provider integration mentioned below is a future option, not part of this redesign.
+
+Contract: [Blueprint](./IMMERSIVE-AI-PORTFOLIO-BLUEPRINT.md) and [Implementation plan](./IMMERSIVE-AI-IMPLEMENTATION-PLAN.md). These proposed target requirements take precedence over conflicting legacy guidance only after explicit approval.
+
+---
+
 ## 1. Overview
 
 Build a polished, fast, single-page portfolio that positions Shanid Cherukattil as a lead frontend engineer who improves web performance, scalability, and product usability.

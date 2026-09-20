@@ -1,5 +1,21 @@
 # Functional Requirements Document
 
+## Living System target behavior (pending documentation approval)
+
+The numbered requirements below describe the legacy portfolio requirements, not proof that `/` currently meets them. The target is developed only at `/lab` until final cutover approval.
+
+- Preserve `home`, `about`, `experience`, `projects`, `skills`, `contact` and direct anchor/refresh behavior using real links and native scrolling.
+- Replace percentage skill indicators (FR-018) with capability groups and supporting evidence. Move the target portrait to About.
+- Extend FR-020 to required name, email, role/client intent and message; generate one introduction shared by email, approved WhatsApp and confirmed LinkedIn copy/open actions.
+- Clarify FR-024: successful preparation or copying is not successful delivery. Never claim a message was sent by opening a draft or profile.
+- Missing channel configuration hides that action; clipboard failure retains a selectable introduction and usable profile link. Preserve input on every failure.
+- All essential content and navigation work without WebGL; static content and ordinary contact links remain available without JavaScript. Reduced motion forces static rendering.
+- One scene director drives one decorative canvas; full/lite/static never change content availability.
+
+Contract: [Blueprint](./IMMERSIVE-AI-PORTFOLIO-BLUEPRINT.md) and [Implementation plan](./IMMERSIVE-AI-IMPLEMENTATION-PLAN.md). These proposed target requirements take precedence over conflicting legacy guidance only after explicit approval.
+
+---
+
 ## 1. Navigation
 
 - FR-001: Show links for Home, About, Experience, Projects, Skills, and Contact.

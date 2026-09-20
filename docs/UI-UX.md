@@ -1,5 +1,17 @@
 # UI/UX Specification
 
+## Living System visual contract (pending documentation approval)
+
+Sections below preserve the legacy design reference for current `/`. For the target `/lab`, the blueprint supersedes the legacy fonts, palette, hero portrait and percentage indicators.
+
+Use Void `#05070C`, Surface `#0D1424`, Text `#EEF4F2`, Signal Mint `#5EF2A6`, Ion Blue `#58C7FF`, Spectral Violet `#8875FF`; Unbounded display, Manrope body and IBM Plex Mono for genuine metadata. One organism connects all scenes; major transitions carry cinematic motion while interface motion stays restrained. Portrait moves to About. Content is readable without hover or animation, and remains above decorative geometry.
+
+Use scoped CSS modules and tokens. Retain semantic anchors, visible keyboard focus, labeled form controls, mobile-menu state and 200% zoom support. Review full/lite/static at 320, 375, 768, 1024, 1440 and 2560px. No-JavaScript and reduced-motion layouts are composed static experiences, not empty canvases.
+
+Contract: [Blueprint](./IMMERSIVE-AI-PORTFOLIO-BLUEPRINT.md) and [Implementation plan](./IMMERSIVE-AI-IMPLEMENTATION-PLAN.md). These proposed target requirements take precedence over conflicting legacy guidance only after explicit approval.
+
+---
+
 ## 1. Design Direction
 
 The interface should feel like a technical performance lab: focused, precise, and confident. Use a dark navy base with neon green for primary action and cyan for secondary technical emphasis. Keep the content brighter than the decoration.
