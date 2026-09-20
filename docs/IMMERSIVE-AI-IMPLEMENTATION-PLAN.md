@@ -22,13 +22,13 @@
 
 ## Review focus
 
-| Condition | Expected behavior | Owner |
-| --- | --- | --- |
-| Hash refresh before fonts/media settle | Correct readable section, matching scene and no concealed heading | Tasks 2, 4 |
-| Reduced motion toggled or WebGL context lost mid-session | Immediate static composition; input and focus preserved | Task 5 |
-| Unicode, newlines, `&`, `?`, `#` in contact input | One safely encoded introduction, no query/header injection | Task 3 |
-| Clipboard denied, missing channel, popup blocked | Manual copy and ordinary profile/contact navigation remain usable | Task 3 |
-| Global styles, zoom or mobile-menu resize | Scoped design, visible focus and no hidden focusable menu | Tasks 2, 7 |
+| Condition                                                | Expected behavior                                                 | Owner      |
+| -------------------------------------------------------- | ----------------------------------------------------------------- | ---------- |
+| Hash refresh before fonts/media settle                   | Correct readable section, matching scene and no concealed heading | Tasks 2, 4 |
+| Reduced motion toggled or WebGL context lost mid-session | Immediate static composition; input and focus preserved           | Task 5     |
+| Unicode, newlines, `&`, `?`, `#` in contact input        | One safely encoded introduction, no query/header injection        | Task 3     |
+| Clipboard denied, missing channel, popup blocked         | Manual copy and ordinary profile/contact navigation remain usable | Task 3     |
+| Global styles, zoom or mobile-menu resize                | Scoped design, visible focus and no hidden focusable menu         | Tasks 2, 7 |
 
 ## Task 1: Restore and record the baseline
 
@@ -49,31 +49,54 @@
 **Interfaces:** define these models in `types.ts`; only confirmed entries enter `content.ts`.
 
 ```ts
-export type SceneId = 'home' | 'about' | 'experience' | 'projects' | 'skills' | 'contact';
-export type RenderProfile = 'full' | 'lite' | 'static';
-export type ContactIntent = 'role' | 'client';
+export type SceneId =
+  "home" | "about" | "experience" | "projects" | "skills" | "contact";
+export type RenderProfile = "full" | "lite" | "static";
+export type ContactIntent = "role" | "client";
 export interface ExperienceItem {
-  id: string; kind: 'employment' | 'education'; role: string;
-  organization: string; period: string; responsibilities: string[];
+  id: string;
+  kind: "employment" | "education";
+  role: string;
+  organization: string;
+  period: string;
+  responsibilities: string[];
   technologies: string[];
 }
 export interface ProjectCaseStudy {
-  id: string; name: string; visibility: 'public' | 'private';
-  users: string; problem: string; responsibilities: string[];
-  architecture: string; technologies: string[];
+  id: string;
+  name: string;
+  visibility?: "public" | "private";
+  users: string;
+  problem: string;
+  responsibilities: string[];
+  architecture: string;
+  technologies: string[];
   outcomes: { text: string; evidence: string }[];
   links?: { label: string; url: string }[];
   media?: { src: string; alt: string; width: number; height: number }[];
 }
 export interface SkillGroup {
-  id: string; name: string; capabilities: string[];
-  evidence: { kind: 'experience' | 'project'; id: string }[];
+  id: string;
+  name: string;
+  capabilities: string[];
+  evidence: { kind: "experience" | "project"; id: string }[];
 }
 export interface PortfolioContent {
-  identity: { name: string; headline: string; introduction: string; biography: string };
+  identity: {
+    name: string;
+    headline: string;
+    introduction: string;
+    biography: string;
+  };
   portrait: { src: string; alt: string; width: number; height: number };
-  experience: ExperienceItem[]; projects: ProjectCaseStudy[]; skills: SkillGroup[];
-  contact: { email?: string; whatsappInternational?: string; linkedinUrl?: string };
+  experience: ExperienceItem[];
+  projects: ProjectCaseStudy[];
+  skills: SkillGroup[];
+  contact: {
+    email?: string;
+    whatsappInternational?: string;
+    linkedinUrl?: string;
+  };
 }
 ```
 
@@ -155,3 +178,12 @@ export interface PortfolioContent {
 - [ ] Re-run build/tests and the root-route interaction, visual and SEO checks. Obtain final visual review; deployment itself requires explicit authorization. If production checks fail, restore the recorded prior deployment and verify its homepage/contact journey.
 
 **Exit:** approved cutover with reproducible evidence and rollback path. No deployment or successful delivery is assumed.
+
+## Execution status ? 2026-09-21
+
+- Baseline rebuilt and recorded in [baseline evidence](./IMMERSIVE-AI-BASELINE.md).
+- Semantic `/lab` and contact composer implemented. Seven focused tests cover validation, encoding and server-rendered fallback behavior; browser verification is recorded separately.
+- Current gate: user review of the complete semantic experience before WebGL. Tasks 4?5 have not started; no rendering dependencies added.
+- Existing frontend source material is retained for review. AI evidence, contact reconfirmation and release assets remain in the [content queue](./IMMERSIVE-AI-CONTENT-REVIEW.md).
+- Project visibility became optional to avoid inventing private/public status. Tests use the existing Node 24 runtime and TypeScript compiler; no new test dependency.
+- Existing independent formatting/package changes were preserved. No commit, push, deployment or homepage cutover performed.

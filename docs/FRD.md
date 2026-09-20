@@ -1,6 +1,6 @@
 # Functional Requirements Document
 
-## Living System target behavior (pending documentation approval)
+## Living System target behavior (documentation approved 2026-09-21)
 
 The numbered requirements below describe the legacy portfolio requirements, not proof that `/` currently meets them. The target is developed only at `/lab` until final cutover approval.
 

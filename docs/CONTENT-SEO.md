@@ -1,6 +1,6 @@
 # Content and SEO Requirements
 
-## Living System content and route policy (pending documentation approval)
+## Living System content and route policy (documentation approved 2026-09-21)
 
 Current `/` keeps its existing source content during experimentation. The target equal frontend/AI positioning requires substantiated AI projects and responsibilities; it is not yet a verified biography. Collect project name, visibility, users, problem, responsibilities, architecture, actual technologies/providers, evidenced outcomes and publishable media. Record role-specific AI work only where it occurred. Keep incomplete material in documentation, outside production content data.
 

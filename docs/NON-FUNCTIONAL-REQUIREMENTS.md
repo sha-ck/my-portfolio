@@ -1,6 +1,6 @@
 # Non-Functional Requirements
 
-## Living System quality contract (pending documentation approval)
+## Living System quality contract (documentation approved 2026-09-21)
 
 The existing numerical targets below remain targets, not measured results. Current `/` is preserved while `/lab` is evaluated in full, lite and static profiles. Reduced motion, no JavaScript, failed WebGL and context loss must retain readable content and usable contact/navigation.
 

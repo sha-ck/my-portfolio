@@ -2,9 +2,9 @@
 
 ## Living System approval and release gates
 
-Status: documentation awaiting approval. No box below is evidence of completion until checked with a recorded result. The legacy checklist remains applicable except that browser contact handoffs must not be described as confirmed message delivery.
+Status: documentation approved 2026-09-21; semantic implementation awaiting visual review. No box below is evidence of completion until checked with a recorded result. The legacy checklist remains applicable except that browser contact handoffs must not be described as confirmed message delivery.
 
-- [ ] Explicit approval of the blueprint and implementation plan recorded before dependencies/product code change.
+- [x] Explicit approval of the blueprint and implementation plan recorded before dependencies/product code change.
 - [ ] Existing homepage rebuilt and runtime baseline recorded, including desktop/mobile screenshots and navigation/contact behavior.
 - [ ] `/` unchanged during lab development; `/lab` unlinked, `noindex, nofollow`, excluded from sitemap.
 - [ ] Complete semantic experience reviewed before WebGL enhancement.

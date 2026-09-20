@@ -6,13 +6,13 @@ This folder contains the product and implementation requirements for Shanid Cher
 
 Documentation approved on 2026-09-21. Implementation is underway on the isolated `/lab` experience. Semantic review and final homepage cutover approval remain required.
 
-| Surface | Current state | Contract |
-| --- | --- | --- |
-| `/` | Existing frontend portfolio | Preserve during development |
-| Living System target | Proposed specification awaiting approval | Equal frontend leadership and AI engineering, subject to verified evidence |
-| `/lab` | Planned; not implemented | Unlinked, noindex/nofollow experiment, retained after launch |
+| Surface              | Current state                            | Contract                                                                   |
+| -------------------- | ---------------------------------------- | -------------------------------------------------------------------------- |
+| `/`                  | Existing frontend portfolio              | Preserve during development                                                |
+| Living System target | Approved specification; implementation underway | Equal frontend leadership and AI engineering, subject to verified evidence |
+| `/lab`               | Semantic experience implemented; visual review pending                 | Unlinked, noindex/nofollow experiment, retained after launch               |
 
-Read the [canonical blueprint](./IMMERSIVE-AI-PORTFOLIO-BLUEPRINT.md), then the [ordered implementation plan](./IMMERSIVE-AI-IMPLEMENTATION-PLAN.md). Approve both before implementation starts. Each existing document now separates the target addendum from legacy guidance. Baseline rebuild and visual verification begin after this gate; neither has been claimed complete.
+Read the [canonical blueprint](./IMMERSIVE-AI-PORTFOLIO-BLUEPRINT.md), then the [ordered implementation plan](./IMMERSIVE-AI-IMPLEMENTATION-PLAN.md). Both were approved on 2026-09-21. Each existing document now separates the target addendum from legacy guidance. Baseline rebuild and semantic browser verification are recorded in the evidence documents below.
 
 ## Documents
 
@@ -37,3 +37,11 @@ The product is a single-page Next.js portfolio for a lead frontend developer. It
 - Current contact mechanism: `mailto:` link opened from the contact form
 - Current stack: Next.js 13, React 18, TypeScript, Tailwind CSS, global CSS and inline styles (CSS modules planned for the redesign)
 - Source of truth: implementation in `app/page.tsx` and `app/globals.css`
+
+## Implementation evidence
+
+- [Baseline](./IMMERSIVE-AI-BASELINE.md)
+- [Content confirmation queue](./IMMERSIVE-AI-CONTENT-REVIEW.md)
+- [Verification record](./IMMERSIVE-AI-VERIFICATION.md)
+
+Preview locally at `/lab`. The next gate is semantic visual review before adding WebGL; final homepage cutover remains separate.

@@ -27,7 +27,7 @@ body {
 }
 
 /* Styles moved from app/page.tsx */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Fira+Code:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Fira+Code:wght@400;500&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -248,7 +248,7 @@ header.site-header.scrolled {
   width: 100%;
   text-align: left;
   color: #f8fafc;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 14px;
   padding: 12px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -301,12 +301,12 @@ header.site-header.scrolled {
   background: rgba(0, 255, 135, 0.1);
   border: 1px solid rgba(0, 255, 135, 0.2);
   color: #00ff87;
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
   font-size: 11px;
   margin-bottom: 24px;
 }
 .hero-title {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: clamp(36px, 6vw, 72px);
   font-weight: 700;
   line-height: 1.1;
@@ -359,10 +359,10 @@ header.site-header.scrolled {
   color: #94a3b8;
 }
 .mono {
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
 }
 .grotesk {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 }
 .inter {
   font-family: Inter, sans-serif;
@@ -385,7 +385,7 @@ header.site-header.scrolled {
   color: #0a0f1c;
   font-weight: 700;
   border-radius: 10px;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 }
 .btn-ghost {
   padding: 14px 28px;
@@ -394,16 +394,16 @@ header.site-header.scrolled {
   font-weight: 700;
   border-radius: 10px;
   border: 1px solid rgba(148, 163, 184, 0.3);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 }
 .badge {
   padding: 4px 10px;
   border-radius: 9999px;
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
   font-size: 11px;
 }
 .stat {
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
   font-weight: 700;
 }
 .card {
@@ -472,7 +472,7 @@ header.site-header.scrolled {
 .form-label {
   display: block;
   color: #94a3b8;
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
   font-size: 11px;
   text-transform: uppercase;
   margin-bottom: 8px;
@@ -501,16 +501,16 @@ header.site-header.scrolled {
   justify-content: center;
 }
 .h1 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
 }
 .h2 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 32px;
   font-weight: 700;
 }
 .h3 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 20px;
   font-weight: 700;
 }

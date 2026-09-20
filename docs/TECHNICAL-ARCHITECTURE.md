@@ -1,6 +1,6 @@
 # Technical Architecture
 
-## Living System architecture (pending documentation approval)
+## Living System architecture (documentation approved 2026-09-21)
 
 The application shape below describes current `/`; suggested legacy folders and contact API are not implemented structures. The target adds `app/lab/page.tsx` and reusable `app/immersive/` modules as specified in the implementation plan. Keep the current page, root fonts and global stylesheet unchanged during lab development.
 

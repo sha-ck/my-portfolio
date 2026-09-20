@@ -1,6 +1,6 @@
 # UI/UX Specification
 
-## Living System visual contract (pending documentation approval)
+## Living System visual contract (documentation approved 2026-09-21)
 
 Sections below preserve the legacy design reference for current `/`. For the target `/lab`, the blueprint supersedes the legacy fonts, palette, hero portrait and percentage indicators.
 
@@ -26,15 +26,15 @@ The interface should feel like a technical performance lab: focused, precise, an
 
 ## 3. Color Tokens
 
-| Token | Purpose |
-| --- | --- |
-| `--bg-primary` | Main deep navy background. |
-| `--bg-surface` | Translucent dark surface for navigation and cards. |
-| `--text-primary` | Main high-contrast text. |
-| `--text-muted` | Supporting copy and metadata. |
-| `--accent-green` | Primary actions, availability, and success. |
-| `--accent-cyan` | Links, technical highlights, and secondary actions. |
-| `--border-subtle` | Low-contrast separation between surfaces. |
+| Token             | Purpose                                             |
+| ----------------- | --------------------------------------------------- |
+| `--bg-primary`    | Main deep navy background.                          |
+| `--bg-surface`    | Translucent dark surface for navigation and cards.  |
+| `--text-primary`  | Main high-contrast text.                            |
+| `--text-muted`    | Supporting copy and metadata.                       |
+| `--accent-green`  | Primary actions, availability, and success.         |
+| `--accent-cyan`   | Links, technical highlights, and secondary actions. |
+| `--border-subtle` | Low-contrast separation between surfaces.           |
 
 Do not use color as the only signal for state. Pair it with text, icons, or structure.
 

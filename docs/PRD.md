@@ -1,6 +1,6 @@
 # Product Requirements Document
 
-## Living System target (pending documentation approval)
+## Living System target (documentation approved 2026-09-21)
 
 Current `/` remains the frontend-focused portfolio described below. The proposed target gives frontend leadership and AI product engineering equal weight, and treats role opportunities and client projects equally. Implement it first on the unlinked, non-indexed `/lab`; no current-homepage replacement is authorized yet.
 
@@ -68,12 +68,12 @@ Hiring managers, founders, and engineering teams need a fast way to understand t
 
 ## 9. Risks and Mitigations
 
-| Risk | Mitigation |
-| --- | --- |
-| Claims feel generic | Attach measurable outcomes and specific project context. |
+| Risk                                         | Mitigation                                                      |
+| -------------------------------------------- | --------------------------------------------------------------- |
+| Claims feel generic                          | Attach measurable outcomes and specific project context.        |
 | Contact flow depends on local email software | Add a server or form provider integration in a later iteration. |
-| Heavy visuals hurt performance | Prefer CSS and optimized assets; lazy-load non-critical media. |
-| Mobile navigation becomes hard to use | Test at narrow widths and keep focus behavior explicit. |
+| Heavy visuals hurt performance               | Prefer CSS and optimized assets; lazy-load non-critical media.  |
+| Mobile navigation becomes hard to use        | Test at narrow widths and keep focus behavior explicit.         |
 
 ## 10. Release Criteria
 

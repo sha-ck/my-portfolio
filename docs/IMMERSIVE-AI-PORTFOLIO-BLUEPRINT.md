@@ -24,13 +24,13 @@ This is source evidence, not a runtime audit or confirmation of professional cla
 
 ## Creative contract
 
-| Token | Value | Use |
-| --- | --- | --- |
-| Void | `#05070C` | Overall backdrop |
-| Surface | `#0D1424` | Readable content surfaces |
-| Text | `#EEF4F2` | Primary copy |
-| Signal Mint | `#5EF2A6` | Main actions and organism signals |
-| Ion Blue | `#58C7FF` | Secondary connections |
+| Token           | Value     | Use                                  |
+| --------------- | --------- | ------------------------------------ |
+| Void            | `#05070C` | Overall backdrop                     |
+| Surface         | `#0D1424` | Readable content surfaces            |
+| Text            | `#EEF4F2` | Primary copy                         |
+| Signal Mint     | `#5EF2A6` | Main actions and organism signals    |
+| Ion Blue        | `#58C7FF` | Secondary connections                |
 | Spectral Violet | `#8875FF` | Spatial depth and selective emphasis |
 
 Use Unbounded for restrained display statements, Manrope for body copy, and IBM Plex Mono for real technical metadata. Scope tokens and fonts to the new experience. Do not fabricate terminal output, telemetry, model names, or metrics as decoration. Test contrast on the actual surfaces; palette membership does not guarantee contrast.
@@ -39,14 +39,14 @@ Keep text as the dominant reading layer. Desktop compositions place the organism
 
 ## Scene and motion contract
 
-| Scene | Communication and composition | Organism transformation | Static equivalent |
-| --- | --- | --- | --- |
-| Home | Identity, balanced positioning, work and contact actions; no portrait | A compact structure awakens through controlled illumination | Lit core and sparse connecting paths |
-| About | Person and engineering approach; portrait beside biography | Two connected structural branches represent frontend and AI disciplines | Two linked branches beside readable biography |
-| Experience | Reverse chronological work, education distinguished from employment | A continuous structural spine connects career milestones | Spine and milestone markers |
-| Projects | Problem, responsibility, architecture and outcome for each case study | Connected spatial chambers emphasize the current project without hiding others | A chamber motif alongside each DOM case study |
-| Skills | Capability groups backed by project or role evidence | Connections form a capability ecosystem | A simplified network with DOM labels |
-| Contact | Equal role/client intent choices and clear channel actions | Camera pulls back to reveal the complete connected structure | Complete network behind the composer |
+| Scene      | Communication and composition                                         | Organism transformation                                                        | Static equivalent                             |
+| ---------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------ | --------------------------------------------- |
+| Home       | Identity, balanced positioning, work and contact actions; no portrait | A compact structure awakens through controlled illumination                    | Lit core and sparse connecting paths          |
+| About      | Person and engineering approach; portrait beside biography            | Two connected structural branches represent frontend and AI disciplines        | Two linked branches beside readable biography |
+| Experience | Reverse chronological work, education distinguished from employment   | A continuous structural spine connects career milestones                       | Spine and milestone markers                   |
+| Projects   | Problem, responsibility, architecture and outcome for each case study | Connected spatial chambers emphasize the current project without hiding others | A chamber motif alongside each DOM case study |
+| Skills     | Capability groups backed by project or role evidence                  | Connections form a capability ecosystem                                        | A simplified network with DOM labels          |
+| Contact    | Equal role/client intent choices and clear channel actions            | Camera pulls back to reveal the complete connected structure                   | Complete network behind the composer          |
 
 One continuous procedural organism persists across scenes. Camera choreography is concentrated at major transitions; UI motion remains restrained. Native document scroll owns navigation. No scroll hijacking, forced scene completion, mandatory pinning, or artificial multi-screen gaps. Direct anchor jumps resolve immediately to the correct state without playing intervening scenes. The director recalculates section measurements after resize and layout changes. Progress is finite and clamped to `[0, 1]`.
 
