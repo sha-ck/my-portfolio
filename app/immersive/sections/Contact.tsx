@@ -12,7 +12,7 @@ export function Contact({ config }: { config: PortfolioContent["contact"] }) {
       className={`${s.section} ${s.contact}`}
       aria-labelledby="contact-heading"
     >
-      <div>
+      <div data-reveal>
         <p className={s.eyebrow}>Contact / Make a connection</p>
         <h2 id="contact-heading">
           A good system

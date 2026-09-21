@@ -19,6 +19,13 @@ export type SceneControls = SceneState & {
 export function clampProgress(value: number): number {
   return Number.isFinite(value) ? Math.min(1, Math.max(0, value)) : 0;
 }
+/** Hold the section's form, then ease into its successor without a boundary jump. */
+export function resolveTransition(state: SceneState) {
+  const from = sceneIds.indexOf(state.id);
+  const to = Math.min(from + 1, sceneIds.length - 1);
+  const t = clampProgress((state.progress - 0.5) * 2);
+  return { from, to, mix: from === to ? 0 : t * t * (3 - 2 * t) };
+}
 export function resolveScene(
   sections: { id: SceneId; top: number; height: number }[],
   position: number,

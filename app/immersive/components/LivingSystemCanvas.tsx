@@ -15,6 +15,7 @@ import {
 } from "three";
 import type { RenderProfile } from "../types";
 import { sceneIds, type SceneControls } from "./sceneState";
+import { resolveTransition } from "../scene/renderProfile";
 import s from "../portfolio.module.css";
 
 type Props = {
@@ -96,6 +97,7 @@ function Organism({
   );
   const current = useMemo(() => positions(0, count), [count]);
   const dummy = useMemo(() => new Object3D(), []);
+  const target = useMemo(() => new Vector3(), []);
   const connections = useMemo(
     () =>
       Array.from({ length: count }, (_, i) => [
@@ -122,7 +124,7 @@ function Organism({
   useFrame(({ camera, clock }, delta) => {
     if (!visible || !group.current || !nodes.current || !core.current) return;
     const scene = controls.current;
-    const index = sceneIds.indexOf(scene.id);
+    const transition = resolveTransition(scene);
     const snap = revision.current !== scene.revision;
     revision.current = scene.revision;
     const blend = snap ? 1 : 1 - Math.exp(-Math.min(delta, 0.05) * 4);
@@ -130,7 +132,12 @@ function Organism({
     const breath = 1 + Math.sin(time * 0.7) * 0.012;
     const attribute = geometry.getAttribute("position") as BufferAttribute;
     for (let i = 0; i < count; i++) {
-      current[i].lerp(layouts[index][i], blend);
+      target.lerpVectors(
+        layouts[transition.from][i],
+        layouts[transition.to][i],
+        transition.mix,
+      );
+      current[i].lerp(target, blend);
       dummy.position.copy(current[i]);
       const chamber = Math.floor((i / count) * 4);
       const emphasis =
@@ -157,16 +164,28 @@ function Organism({
       blend,
     );
     group.current.scale.setScalar(breath);
+    // Keep the canvas fixed; move the organism as the Hero gives way to content.
+    const departure = transition.from === 0 ? transition.mix : 1;
+    group.current.position.x = MathUtils.lerp(
+      group.current.position.x,
+      departure * 0.65,
+      blend,
+    );
     core.current.scale.setScalar(
       MathUtils.lerp(
         core.current.scale.x,
-        scene.id === "home" ? 0.68 : 0.27,
+        MathUtils.lerp(0.68, 0.27, departure),
         blend,
       ),
     );
     core.current.rotation.y = time * 0.1;
-    const cameraZ =
-      scene.id === "contact" ? (profile === "full" ? 8.3 : 7.5) : 6.8;
+    const arrival =
+      transition.from === 5 ? 1 : transition.to === 5 ? transition.mix : 0;
+    const cameraZ = MathUtils.lerp(
+      6.8,
+      profile === "full" ? 8.3 : 7.5,
+      arrival,
+    );
     camera.position.z = MathUtils.lerp(camera.position.z, cameraZ, blend);
     if (!ready.current) {
       ready.current = true;

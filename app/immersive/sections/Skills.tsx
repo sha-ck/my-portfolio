@@ -3,8 +3,8 @@ import type {
   ExperienceItem,
   ProjectCaseStudy,
   SkillGroup,
-} from '../types';
-import s from '../portfolio.module.css';
+} from "../types";
+import s from "../portfolio.module.css";
 
 export function filterRenderableAiPractices(aiPractices: AiPractice[]) {
   return aiPractices.filter(
@@ -28,15 +28,17 @@ export function Skills({
 
   return (
     <section id="skills" className={s.section} aria-labelledby="skills-heading">
-      <p className={s.eyebrow}>Capabilities / Connected by practice</p>
-      <h2 id="skills-heading">
+      <p className={s.eyebrow} data-reveal>
+        Capabilities / Connected by practice
+      </p>
+      <h2 data-reveal id="skills-heading">
         What I bring
         <br />
         to the system.
       </h2>
       <div className={s.skills}>
         {groups.map((group) => (
-          <article key={group.id}>
+          <article data-reveal key={group.id}>
             <span className={s.skillNode} aria-hidden="true" />
             <h3>{group.name}</h3>
             <ul>
@@ -48,7 +50,7 @@ export function Skills({
               <span>In practice</span>
               {group.evidence.map((ref) => {
                 const label =
-                  ref.kind === 'project'
+                  ref.kind === "project"
                     ? projects.find((p) => p.id === ref.id)?.name
                     : experience.find((e) => e.id === ref.id)?.organization;
                 return label ? (
@@ -61,7 +63,7 @@ export function Skills({
           </article>
         ))}
         {visibleAiPractices.map((practice) => (
-          <article key={practice.id} className={s.practice}>
+          <article data-reveal key={practice.id} className={s.practice}>
             <span className={s.skillNode} aria-hidden="true" />
             <h3>{practice.name}</h3>
             <p>{practice.description}</p>

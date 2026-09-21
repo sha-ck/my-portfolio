@@ -7,4 +7,9 @@
   --violet: #8875ff;
   --muted: #a5b1be;
   --line: #263342;
+  --motion-interaction: 200ms;
+  --motion-entrance: 520ms;
+  --motion-stagger: 65ms;
+  --motion-scene: 600ms;
+  --type-label: 11px;
 }

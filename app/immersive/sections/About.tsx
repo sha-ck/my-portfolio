@@ -14,7 +14,7 @@ export function About({
       className={`${s.section} ${s.about}`}
       aria-labelledby="about-heading"
     >
-      <div className={s.portrait}>
+      <div className={s.portrait} data-reveal>
         <Image
           {...portrait}
           src={portrait.src}
@@ -23,10 +23,10 @@ export function About({
         />
         <span>
           {identity.name}
-          <small>software engineer & architect</small>
+          <small>{identity.currentRole}</small>
         </span>
       </div>
-      <div>
+      <div data-reveal>
         <p className={s.eyebrow}>About / The human layer</p>
         <h2 id="about-heading">
           The interface is

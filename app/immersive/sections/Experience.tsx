@@ -7,11 +7,20 @@ export function Experience({ items }: { items: ExperienceItem[] }) {
       className={s.section}
       aria-labelledby="experience-heading"
     >
-      <p className={s.eyebrow}>Experience / A connected journey</p>
-      <h2 id="experience-heading">Built over time.</h2>
+      <p className={s.eyebrow} data-reveal>
+        Experience / A connected journey
+      </p>
+      <h2 data-reveal id="experience-heading">
+        Built over time.
+      </h2>
       <div className={s.timeline}>
         {items.map((item) => (
-          <article id={item.id} className={s.timelineItem} key={item.id}>
+          <article
+            data-reveal
+            id={item.id}
+            className={s.timelineItem}
+            key={item.id}
+          >
             <div className={s.period}>
               {item.period}
               <span>

@@ -5,7 +5,30 @@ const {
   resolveScene,
   chooseRenderProfile,
   downgradeProfile,
+  resolveTransition,
 } = require("../app/immersive/scene/renderProfile.ts");
+
+test("scroll morph holds each form, then joins the next scene continuously", () => {
+  assert.deepEqual(resolveTransition({ id: "home", progress: 0 }), {
+    from: 0,
+    to: 1,
+    mix: 0,
+  });
+  assert.equal(resolveTransition({ id: "home", progress: 0.5 }).mix, 0);
+  const halfway = resolveTransition({ id: "home", progress: 0.75 });
+  assert.equal(halfway.mix, 0.5);
+  assert.equal(resolveTransition({ id: "home", progress: 1 }).mix, 1);
+  assert.deepEqual(resolveTransition({ id: "contact", progress: 1 }), {
+    from: 5,
+    to: 5,
+    mix: 0,
+  });
+  assert.equal(resolveTransition({ id: "home", progress: NaN }).mix, 0);
+  assert.equal(
+    resolveTransition({ id: "home", progress: 0.75 }).mix,
+    halfway.mix,
+  );
+});
 
 test("poor rendering downgrades the actual active profile, including initially lite devices", () => {
   assert.equal(downgradeProfile("full"), "lite");

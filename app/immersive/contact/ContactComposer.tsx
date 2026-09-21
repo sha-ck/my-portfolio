@@ -65,7 +65,7 @@ export function ContactComposer({
     : null;
   const available = !!(config.email || config.linkedinUrl || whatsapp);
   return (
-    <div className={s.composer}>
+    <div className={s.composer} data-reveal>
       <noscript>
         <p>
           The introduction composer needs JavaScript. Any available contact

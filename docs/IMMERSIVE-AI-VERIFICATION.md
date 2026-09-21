@@ -1,3 +1,57 @@
+# Immersive refinement verification ? 2026-09-21
+
+## Current scope and implementation
+
+The legacy `/` working-tree page, production layout, global styles, metadata, sitemap and robots implementation were preserved. The existing untracked `/lab` route remains unlinked and renders `noindex, nofollow`. Earlier cutover statements in other documents conflict with the working tree; this pass does not approve or repeat cutover.
+
+- `SceneDirector` coordinates visible-by-default entrances for Hero, About, Experience, Projects, Skills and Contact. The existing scroll scheduler also owns navigation indication; no per-frame React state, second scroll observer, or animation dependency was added. Native anchors, focus, rapid scrolling, motion preference changes, visibility changes and cleanup cancel/skip entrance motion where appropriate.
+- Section progress holds the current form for its first half, then smoothly interpolates persistent nodes into the next form. Hero departure and Contact arrival interpolate object/camera placement without moving the canvas layout.
+- Scoped styling keeps navigation fixed, makes the active destination identifiable by an underline and color, raises 9?10px metadata to an 11px token, and replaces fixed mobile Hero minimums with viewport/content-aware sizing.
+- Project cards retain native disclosures, display existing audience descriptions and support their existing optional media field. No screenshots, project outcomes, identities or media rights were invented. Existing abstract art remains decorative when media is absent.
+- About uses the existing approved identity. Contact logic and honest preparation/handoff semantics are unchanged.
+
+## Baseline and automated results
+
+The repository has both npm and pnpm lockfiles. The installed dependency layout and prior validation use pnpm; this pass used pnpm without installing dependencies.
+
+- Baseline: lint, TypeScript, production build and all 13 existing tests passed. Existing legacy homepage `no-img-element` warning remains.
+- Final: `pnpm test` passes 14 tests, including a new scroll-morph regression written and observed failing before implementation. `pnpm exec tsc --noEmit --incremental false`, `pnpm run lint` and `pnpm run build` pass. Targeted Prettier checking passes for changed code.
+- Full `pnpm run format:check` already failed at baseline on existing repository formatting drift and a UTF-16 `.superpowers/.../ui-audit.json` file. Unrelated files were not reformatted.
+- Strict premium UI audit still reports its same five baseline findings: three in the preserved legacy homepage and two dashboard-style textarea resize rules. The documented marketing-site exception preserves accessible vertical textarea resizing. This is not a clean strict-audit result.
+- Build first-load JS: `/lab` approximately 91 kB before, 91.7 kB after; `/` remains 86.7 kB. No dependencies were added. These bundle values are not runtime speed measurements.
+
+## Browser evidence
+
+Chrome 153.0.8010.52 headless on Windows, software WebGL (SwiftShader). Baseline ran against the production server; final interaction checks passed against both the restarted dev server at `http://localhost:3000` and the production build at `http://localhost:3100`. A dev/build `.next` artifact collision was resolved by stopping the task's production server and restarting the project dev server. Do not run both against the same build directory.
+
+Reproducible checks: `node tests/browser/immersive.cjs`, with a local Chrome remote-debugging endpoint (default `http://127.0.0.1:9333`). Override `CDP_URL` and `PORTFOLIO_URL` as needed. The script creates and closes its own tab. Screenshots are stored in `.superpowers/refinement/`.
+
+Passed:
+
+- Fresh load, resolved portrait, all six sections; forward and reverse anchors; persistent header and consistent `aria-current`; stable canvas horizontal bounds.
+- Content entrances observed throughout About, Experience, Projects, Skills and Contact; rapid-scroll recovery leaves content fully opaque; direct fragments do not require entrance motion.
+- Fragment navigation/refresh, browser history back/forward, keyboard Enter disclosure, pointer collapse and focus visibility.
+- Empty form validation focuses name and reports three errors; valid Unicode input prepares an introduction and correctly encoded email destination. Simulated clipboard denial retains/selects the draft. No external message was sent.
+- Widths 320, 375, 768, 1024, 1440 and 2560px without horizontal document overflow. Touch-emulated mobile menu, Escape dismissal and focus return; desktop/full and mobile/lite profiles.
+- Reduced motion uses static rendering and zero active animations. WebGL context loss and unavailable WebGL retain usable static content. Missing Web Animations API leaves content visible.
+- JavaScript disabled: six server-rendered sections, contact links, disabled composer and no horizontal overflow.
+- `/lab` robots metadata, sitemap exclusion and absence of homepage lab links; no uncaught runtime exceptions in the test runs.
+
+Desktop, tablet, mobile, Projects and no-JavaScript screenshots were captured; desktop, tablet, mobile and Projects screenshots were visually inspected. Screenshots demonstrate layout, not animation smoothness.
+
+Independent read-only code review found no actionable important issues in the scoped implementation and tests.
+
+## Outstanding release requirements
+
+- Owner visual review and confirmation of employment, project/AI evidence, contact ownership, portrait/media rights and production domain remain required (see content review queue).
+- No approved project screenshots or evidenced project outcomes are currently configured.
+- Real-device GPU/idle cost, Lighthouse/Web Vitals, native browser zoom, assistive-technology testing and Firefox/Safari/Edge remain unverified. Software-rendered Chrome is not representative GPU performance evidence. No measured speedup or 90+ score is claimed.
+- Historical cutover documentation must be reconciled before any new production routing decision. No deployment or production cutover is approved by these checks.
+
+---
+
+The record below is historical evidence; its scope/status must not override the current verification above.
+
 # Semantic lab verification 2026-09-21
 
 Scope: implementation Tasks 1-6, before the required semantic visual review. WebGL/full/lite rendering, AI content integration and final cutover are not complete.
