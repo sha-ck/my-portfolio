@@ -1,6 +1,7 @@
-import "./globals.css";
 import type { Metadata } from "next";
 import { Unbounded, Manrope, IBM_Plex_Mono } from "next/font/google";
+import { PortfolioExperience } from "../immersive/PortfolioExperience";
+import { portfolio } from "../immersive/content";
 
 const display = Unbounded({
   subsets: ["latin"],
@@ -10,7 +11,6 @@ const display = Unbounded({
 });
 const body = Manrope({
   subsets: ["latin"],
-  weight: ["400", "500"],
   variable: "--font-body",
   display: "swap",
 });
@@ -22,9 +22,10 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://shanidcherukattil.com"),
-  title: "Shanid Cherukattil",
-  description: "Engineering the Speed of the Web.",
+  title: "Shanid Cherukattil - Portfolio Lab",
+  description:
+    "Frontend architecture, performance and connected applications. An experimental portfolio by Shanid Cherukattil.",
+  robots: { index: false, follow: false },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
@@ -32,14 +33,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function LabPage() {
   return (
-    <html lang="en">
-      <body className={`${display.variable} ${body.variable} ${mono.variable}`}>{children}</body>
-    </html>
+    <div className={`${display.variable} ${body.variable} ${mono.variable}`}>
+      <PortfolioExperience content={portfolio} />
+    </div>
   );
 }
