@@ -15,7 +15,7 @@ import {
   downgradeProfile,
   chooseRenderProfile,
   type SceneControls,
-} from "./sceneState";
+} from "../scene/renderProfile";
 
 const LivingSystemCanvas = dynamic(() => import("./LivingSystemCanvas"), {
   ssr: false,

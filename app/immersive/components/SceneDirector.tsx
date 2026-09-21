@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, type MutableRefObject } from "react";
-import { resolveScene, sceneIds, type SceneControls } from "./sceneState";
+import { resolveScene, sceneIds, type SceneControls } from "../scene/renderProfile";
 
 export function SceneDirector({
   controls,

@@ -27,7 +27,6 @@ body {
 }
 
 /* Styles moved from app/page.tsx */
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Fira+Code:wght@400;500&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;

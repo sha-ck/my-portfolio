@@ -4,13 +4,13 @@ This folder contains the product and implementation requirements for Shanid Cher
 
 ## Redesign status and approval
 
-Documentation approved on 2026-09-21. Implementation is underway on the isolated `/lab` experience. Semantic review and final homepage cutover approval remain required.
+Documentation approved on 2026-09-21. Production cutover completed — immersive portfolio is now the production homepage at `/`. Content evidence and deployment authorization remain pending.
 
-| Surface              | Current state                            | Contract                                                                   |
-| -------------------- | ---------------------------------------- | -------------------------------------------------------------------------- |
-| `/`                  | Existing frontend portfolio              | Preserve during development                                                |
-| Living System target | Approved specification; implementation underway | Equal frontend leadership and AI engineering, subject to verified evidence |
-| `/lab`               | Semantic experience implemented; visual review pending                 | Unlinked, noindex/nofollow experiment, retained after launch               |
+| Surface | Current state | Contract |
+| --- | --- | --- |
+| `/` | Immersive Living System portfolio | Production homepage |
+| `/lab` | Removed after cutover | — |
+| Content evidence | AI projects, employment, contact ownership pending | Owner confirmation required |
 
 Read the [canonical blueprint](./IMMERSIVE-AI-PORTFOLIO-BLUEPRINT.md), then the [ordered implementation plan](./IMMERSIVE-AI-IMPLEMENTATION-PLAN.md). Both were approved on 2026-09-21. Each existing document now separates the target addendum from legacy guidance. Baseline rebuild and semantic browser verification are recorded in the evidence documents below.
 
@@ -33,10 +33,10 @@ The product is a single-page Next.js portfolio for a lead frontend developer. It
 ## Status
 
 - Product type: personal portfolio and lead-generation site
-- Primary route: `/`
+- Primary route: `/` (immersive Living System portfolio)
 - Current contact mechanism: `mailto:` link opened from the contact form
-- Current stack: Next.js 13, React 18, TypeScript, Tailwind CSS, global CSS and inline styles (CSS modules planned for the redesign)
-- Source of truth: implementation in `app/page.tsx` and `app/globals.css`
+- Current stack: Next.js 13, React 18, TypeScript, CSS modules, Three.js/R3F, GSAP
+- Source of truth: `app/page.tsx` renders `PortfolioExperience` with content from `app/immersive/content.ts`
 
 ## Implementation evidence
 
@@ -44,4 +44,4 @@ The product is a single-page Next.js portfolio for a lead frontend developer. It
 - [Content confirmation queue](./IMMERSIVE-AI-CONTENT-REVIEW.md)
 - [Verification record](./IMMERSIVE-AI-VERIFICATION.md)
 
-Preview locally at `/lab`. The next gate is semantic visual review before adding WebGL; final homepage cutover remains separate.
+Preview locally at `/`. Content evidence and deployment authorization remain pending.

@@ -181,25 +181,38 @@ export interface PortfolioContent {
 
 ## Execution status — verified as of 2026-09-21
 
-- Verified baseline: the repository builds successfully with the current source. Fresh evidence: `npm test` passed 12/12 checks; `npx --no-install tsc --noEmit --incremental false` returned cleanly; `npm run build` completed successfully with only the existing `next/image` warning in [app/page.tsx](../app/page.tsx).
-- Semantic `/lab` route is implemented and retained as an unlinked experiment. The route metadata, six-section anchor structure, static DOM system, mobile navigation behavior, and contact composer are in place, with the main implementation centered in [app/lab/page.tsx](../app/lab/page.tsx), [app/immersive/PortfolioExperience.tsx](../app/immersive/PortfolioExperience.tsx), [app/immersive/components/Navigation.tsx](../app/immersive/components/Navigation.tsx), [app/immersive/contact/ContactComposer.tsx](../app/immersive/contact/ContactComposer.tsx), and [app/immersive/components/sceneState.ts](../app/immersive/components/sceneState.ts).
-- Current evidence-gated work: the content stack still requires confirmation of AI case studies, exact employment history, contact ownership, and approved media/preview assets before the hybrid positioning can be declared ready for release. The queue and constraints remain documented in [docs/IMMERSIVE-AI-CONTENT-REVIEW.md](./IMMERSIVE-AI-CONTENT-REVIEW.md).
-- Current gate: semantic review is complete enough to keep the route stable, but the release path remains blocked on final content evidence and explicit approval for the production cutover. WebGL enhancement and final homepage swap remain out of scope until that evidence is confirmed.
-- The working branch contains the approved immersive implementation, but no homepage replacement, deployment, or production launch was executed.
+- Verified baseline: the repository builds successfully with the current source. Fresh evidence: `pnpm run test` passed 13/13 checks; `npx --no-install tsc --noEmit --incremental false` returned cleanly; `pnpm run build` completed successfully. 7 routes generated: `/` (immersive portfolio), `/robots.txt`, `/sitemap.xml`.
+- Production cutover completed: `/lab` removed, immersive `PortfolioExperience` deployed to `/`, `app/layout.tsx` updated with immersive fonts (Unbounded, Manrope, IBM Plex Mono) and corrected metadata (description typo fixed, `/favicon.ico` icons).
+- Infrastructure: `app/sitemap.ts` lists only `/`. `app/robots.ts` allows all routes.
+- Content reordering: Experience section is now reverse chronological (Notch first).
+- About subtitle updated to "software engineer & architect".
+- File extraction: `app/immersive/scene/renderProfile.ts` created with `chooseRenderProfile`, `downgradeProfile`, `clampProgress`, `resolveScene`, `sceneIds`. `app/immersive/contact/contact.test.ts` created. `app/immersive/components/sceneState.ts` updated to re-export from `../scene/renderProfile`.
+- Current evidence-gated work: the content stack still requires confirmation of AI case studies, exact employment history, contact ownership, and approved media/preview assets before the hybrid positioning can be declared fully ready for release. The queue and constraints remain documented in [docs/IMMERSIVE-AI-CONTENT-REVIEW.md](./IMMERSIVE-AI-CONTENT-REVIEW.md).
+- Current gate: semantic review and production cutover complete. Remaining blocked on content evidence, visual review, and Lighthouse measurements.
 
 ### Verified completion
 
-- Static semantic portfolio layout and six-section navigation for `/lab`.
+- Static semantic portfolio layout and six-section navigation for `/`.
 - Mobile menu behavior, skip link, section focus handling, and a static fallback organism.
 - Contact validation, encoding, preview, and honest no-send behavior with channel-specific fallbacks.
-- Focused automated checks for validation, encoding, and scene progress logic.
+- Focused automated checks for validation, encoding, scene progress logic, render profile selection, and evidence-gated AI practice rendering (13/13 tests).
+- `app/sitemap.ts` and `app/robots.ts` created; `/lab` excluded from sitemap and disallowed in robots (before removal).
+- Production cutover: `/lab` removed, `app/page.tsx` replaced with `<PortfolioExperience>`, `app/layout.tsx` updated with immersive fonts and corrected metadata.
+- Experience section reordered to reverse chronological.
+- About subtitle updated to "software engineer & architect".
+- `app/immersive/scene/renderProfile.ts` extracted from `sceneState.ts`.
+- Lint, TypeScript, focused tests, and production build pass after each major phase (verified 2026-09-21).
 
 ### Remaining blockers
 
 - AI role/case-study evidence remains missing or unconfirmed for hybrid positioning claims.
 - Contact channel ownership (email, LinkedIn, optional WhatsApp) remains a release dependency.
-- Final homepage cutover approval is intentionally deferred by the roadmap and the documentation contract.
+- Visual review of the semantic experience pending owner approval.
+- Lighthouse/Web Vitals measurements not yet taken.
+- Edge/Firefox/Safari, screen reader, and native 200% zoom coverage gaps recorded.
 
 ### Next actionable task
 
-- Complete the evidence-confirmation pass against the content queue and then prepare the final release checklist for the approved cutover, without changing the production `/` route while the evidence is incomplete.
+- Complete the evidence-confirmation pass against the content queue.
+- Obtain owner visual review of the semantic experience.
+- Obtain final homepage cutover confirmation and deployment authorization.

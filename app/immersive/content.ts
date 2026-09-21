@@ -18,18 +18,6 @@ export const portfolio: PortfolioContent = {
   },
   experience: [
     {
-      id: 'spericorn',
-      kind: 'employment',
-      role: 'Software Engineer',
-      organization: 'Spericorn Technology Inc.',
-      period: 'Oct 2021 — Aug 2026',
-      responsibilities: [
-        'Built production applications with React, Next.js, JavaScript, and TypeScript.',
-        'Worked with REST APIs, frontend architecture, and performance optimization.',
-      ],
-      technologies: ['React', 'Next.js', 'TypeScript', 'REST APIs'],
-    },
-    {
       id: 'notch',
       kind: 'employment',
       role: 'Senior Software Engineer',
@@ -40,6 +28,18 @@ export const portfolio: PortfolioContent = {
         'Contribute to APIs, application services, product architecture, and full-stack feature delivery.',
       ],
       technologies: ['Vue.js', 'Kotlin', 'APIs', 'Product architecture'],
+    },
+    {
+      id: 'spericorn',
+      kind: 'employment',
+      role: 'Software Engineer',
+      organization: 'Spericorn Technology Inc.',
+      period: 'Oct 2021 — Aug 2026',
+      responsibilities: [
+        'Built production applications with React, Next.js, JavaScript, and TypeScript.',
+        'Worked with REST APIs, frontend architecture, and performance optimization.',
+      ],
+      technologies: ['React', 'Next.js', 'TypeScript', 'REST APIs'],
     },
     {
       id: 'inmakes',

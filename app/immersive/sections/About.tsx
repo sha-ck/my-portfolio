@@ -23,7 +23,7 @@ export function About({
         />
         <span>
           {identity.name}
-          <small>Frontend engineering & architecture</small>
+          <small>software engineer & architect</small>
         </span>
       </div>
       <div>

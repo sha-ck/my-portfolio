@@ -1,15 +1,23 @@
-# Semantic lab verification ? 2026-09-21
+# Semantic lab verification 2026-09-21
 
-Scope: implementation Tasks 1?3, before the required semantic visual review. WebGL/full/lite rendering, AI content integration and final cutover are not complete.
+Scope: implementation Tasks 1-6, before the required semantic visual review. WebGL/full/lite rendering, AI content integration and final cutover are not complete.
 
 ## Automated evidence
 
-- `pnpm test`: 7/7 passing. Required fields, malformed email, CR/LF rejection, limits, Unicode/query encoding, WhatsApp validation, pre-hydration form safety, WhatsApp-only static fallback and missing configuration.
-- `pnpm exec tsc --noEmit --incremental false`: passed.
-- `pnpm run build`: passed, including lint/type checks. Existing root portrait warning remains; no new lint errors.
+- `pnpm test`: **13/13 passing** (previously reported 7/7). Required fields, malformed email, CR/LF rejection, limits, Unicode/query encoding, WhatsApp validation, pre-hydration form safety, WhatsApp-only static fallback, missing configuration, scene progress logic, render profile selection, and evidence-gated AI practice rendering.
+- `npx --no-install tsc --noEmit --incremental false`: passed cleanly.
+- `pnpm run build`: passed, including lint/type checks. Existing root portrait warning remains; no new lint errors. 8 routes generated: `/` (7.3 kB, 86.8 kB JS), `/lab` (11.6 kB, 91 kB JS), `/robots.txt` (0 B), `/sitemap.xml` (0 B).
 - `pnpm exec prettier --check app/immersive app/lab tests`: passed.
-- Next build: `/lab` 9.23 kB route, 88.5 kB first-load JS; `/` remains 96.1 kB / 175 kB. These are build estimates, not Web Vitals measurements.
+- Next build includes `/robots.txt` and `/sitemap.xml` with `/lab` excluded from sitemap.
 - Tests use Node 24's TypeScript support for pure helpers and the already-installed TypeScript compiler for server component rendering. No test dependencies added.
+
+## Infrastructure verification
+
+- `app/sitemap.ts`: generated; lists only `/`, excludes `/lab`.
+- `app/robots.ts`: disallows `/lab`, references sitemap.
+- `app/lab/page.tsx`: has `robots: { index: false, follow: false }` metadata.
+- `/lab` route confirmed as `noindex, nofollow` via both server metadata and `robots.txt` disallow.
+- Root `/` metadata unchanged from pre-lab state.
 
 ## Browser evidence
 
@@ -24,7 +32,7 @@ Chrome 153 headless on Windows, production server at `http://localhost:3000`:
 - Actual script execution disabled via CDP: all six server-rendered sections, fallback navigation and email link present; composer disabled, no horizontal overflow. Mobile header overlap reproduced and fixed; final header ends at 180px, H1 starts at 367px.
 - 200% CSS zoom simulation: no horizontal overflow, all six sections available. Native browser zoom and screen-reader testing remain release checks.
 - No browser runtime errors reported in the final Chrome check.
-- Lab robots metadata is `noindex, nofollow`. No WebGL dependency or canvas introduced. Production page/layout/global styling were compared after normalizing formatting: only independent formatting edits differ from HEAD.
+- Lab robots metadata is `noindex, nofollow`. WebGL canvas dynamically imported via `next/dynamic`; static profile loads no canvas code. Production page/layout/global styling were compared after normalizing formatting: only independent formatting edits differ from HEAD.
 
 Screenshots and local diagnostic artifacts are in ignored `.superpowers/sdd/IMMERSIVE-AI-IMPLEMENTATION-PLAN/` (including `no-js-mobile.png`).
 

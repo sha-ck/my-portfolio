@@ -1,11 +1,12 @@
-const { test } = require("node:test");
-const assert = require("node:assert/strict");
-const {
+import { test } from "node:test";
+import assert from "node:assert/strict";
+import {
   clampProgress,
   resolveScene,
   chooseRenderProfile,
   downgradeProfile,
-} = require("../app/immersive/scene/renderProfile.ts");
+} from "./renderProfile";
+import type { SceneId } from "../types";
 
 test("poor rendering downgrades the actual active profile, including initially lite devices", () => {
   assert.equal(downgradeProfile("full"), "lite");
@@ -23,8 +24,8 @@ test("progress stays finite and within the scene", () => {
 
 test("the final section owns the document bottom even when its anchor cannot reach the header", () => {
   const sections = [
-    { id: "skills", top: 0, height: 800 },
-    { id: "contact", top: 800, height: 400 },
+    { id: "skills" as SceneId, top: 0, height: 800 },
+    { id: "contact" as SceneId, top: 800, height: 400 },
   ];
   assert.deepEqual(resolveScene(sections, 312, true), {
     id: "contact",
@@ -34,9 +35,9 @@ test("the final section owns the document bottom even when its anchor cannot rea
 
 test("section starts own boundaries, gaps, and forward/backward anchor jumps", () => {
   const sections = [
-    { id: "home", top: 0, height: 400 },
-    { id: "about", top: 400, height: 800 },
-    { id: "contact", top: 1300, height: 0 },
+    { id: "home" as SceneId, top: 0, height: 400 },
+    { id: "about" as SceneId, top: 400, height: 800 },
+    { id: "contact" as SceneId, top: 1300, height: 0 },
   ];
   assert.deepEqual(resolveScene(sections, 0), { id: "home", progress: 0 });
   assert.deepEqual(resolveScene(sections, 400), { id: "about", progress: 0 });

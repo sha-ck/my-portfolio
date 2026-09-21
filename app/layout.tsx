@@ -1,16 +1,33 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Unbounded, Manrope, IBM_Plex_Mono } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const display = Unbounded({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-display",
+  display: "swap",
+});
+const body = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-body",
+  display: "swap",
+});
+const mono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Shanid Cherukattil",
-  description: "Engineering theSpeed of the Web.",
+  description: "Engineering the Speed of the Web.",
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-    apple: "/favicon.svg",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 };
 
@@ -21,7 +38,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${display.variable} ${body.variable} ${mono.variable}`}>{children}</body>
     </html>
   );
 }

@@ -6,7 +6,9 @@ Current `/` keeps its existing source content during experimentation. The target
 
 Reconcile existing project and experience entries with the owner. Reconfirm current employment, existing metrics and absolute claims; source presence is not fact-checking. Required inputs also include confirmed email/LinkedIn, optional WhatsApp number approved for public exposure, production domain, portrait permission and social preview. Missing links/metrics are omitted, never guessed.
 
-`/lab` is unlinked, excluded from sitemap and explicitly `noindex, nofollow`, both before and after launch. Do not block crawling in a way that prevents a crawler from seeing its noindex directive. Production metadata and canonical are changed only at approved cutover, independently of lab metadata. Correct the current description typo and verify the current `/favicon.svg` reference against actual assets at that stage. Structured data is optional and must contain confirmed facts only.
+Production metadata and canonical are changed at the approved cutover. The description typo has been corrected to "Engineering the Speed of the Web." The `/favicon.ico` reference is verified. Structured data is optional and must contain confirmed facts only.
+
+The immersive portfolio is now the production homepage at `/`. The `/lab` route has been removed after the cutover. The contact composer provides drafts/copying, not confirmed delivery.
 
 The contact composer provides drafts/copying, not confirmed delivery. LinkedIn has no promised automatic prefill in this contract. Validate current channel behavior against official documentation during implementation; source references supplied with the brief: [WhatsApp Help](https://faq.whatsapp.com/5913398998672934) and [LinkedIn Help](https://www.linkedin.com/help/linkedin/answer/a541865). These references have not been revalidated during the documentation-only phase.
 
