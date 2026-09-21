@@ -22,6 +22,7 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://shanidcherukattil.com"),
   title: "Shanid Cherukattil",
   description: "Engineering the Speed of the Web.",
   icons: {
