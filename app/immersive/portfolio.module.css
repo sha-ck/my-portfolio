@@ -463,6 +463,36 @@
 .project:focus-within {
   border-color: var(--mint);
 }
+.projectSelected {
+  border-color: var(--mint);
+  box-shadow: 0 0 0 1px #5ef2a622, 0 18px 50px #00000033;
+}
+.projectSelect {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 44px;
+  margin: 10px 0 8px;
+  padding: 10px 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  font-size: 11px;
+  text-align: left;
+}
+.projectSelect span {
+  color: var(--mint);
+  font-size: 16px;
+}
+.projectSelect[aria-pressed="true"] {
+  color: var(--mint);
+}
+.projectSelect:hover {
+  color: var(--text);
+}
 .projectDetails h4 {
   color: var(--text);
   font-size: 11px;
@@ -929,26 +959,119 @@
   .project details[open] .projectDetails {
     animation: detailEntrance var(--motion-entrance) ease;
   }
+  .desktopNav a,
+  .headerContact,
+  .textLink,
+  .heroFoot a,
+  .contactLinks a,
+  .footer a,
+  .evidence a {
+    transition:
+      color var(--motion-interaction) ease,
+      opacity var(--motion-interaction) ease;
+  }
   .primary,
   .secondary,
   .project,
-  .project summary > span {
+  .timelineItem,
+  .skills article,
+  .composer,
+  .project summary > span,
+  .projectSelect span,
+  .actions a span,
+  .heroFoot a span {
     transition:
       border-color var(--motion-interaction) ease,
       background-color var(--motion-interaction) ease,
+      box-shadow var(--motion-interaction) ease,
+      color var(--motion-interaction) ease,
       transform var(--motion-interaction) ease;
   }
+
   .primary:hover,
-  .secondary:hover {
+  .secondary:hover,
+  .primary:focus-visible,
+  .secondary:focus-visible {
     transform: translateY(-2px);
+    box-shadow: 0 8px 22px #0000002e;
   }
   .primary:active,
   .secondary:active {
     transform: none;
+    box-shadow: none;
   }
+
+  .desktopNav a:hover,
+  .desktopNav a:focus-visible,
+  .headerContact:hover,
+  .headerContact:focus-visible,
+  .textLink:hover,
+  .textLink:focus-visible,
+  .heroFoot a:hover,
+  .heroFoot a:focus-visible,
+  .contactLinks a:hover,
+  .contactLinks a:focus-visible,
+  .footer a:hover,
+  .footer a:focus-visible,
+  .evidence a:hover,
+  .evidence a:focus-visible {
+    color: var(--mint);
+  }
+  .actions a:hover span,
+  .actions a:focus-visible span,
+  .heroFoot a:hover span,
+  .heroFoot a:focus-visible span {
+    transform: translate(3px, -2px);
+  }
+
   .project:hover,
   .project:focus-within {
     border-color: var(--mint);
+    box-shadow: 0 14px 34px #00000030;
+    transform: translateY(-3px);
+  }
+  .projectArt {
+    overflow: hidden;
+  }
+  .projectArt img {
+    transition: transform var(--motion-interaction) ease;
+  }
+  .project:hover .projectArt img,
+  .project:focus-within .projectArt img {
+    transform: scale(1.03);
+  }
+  .projectSelect:hover,
+  .projectSelect:focus-visible {
+    color: var(--text);
+  }
+  .projectSelect:hover span,
+  .projectSelect:focus-visible span {
+    transform: translate(3px, -2px);
+  }
+  .timelineItem:hover,
+  .timelineItem:focus-within,
+  .skills article:hover,
+  .skills article:focus-within {
+    border-color: var(--mint);
+    transform: translateY(-2px);
+  }
+  .timelineItem:hover .period,
+  .timelineItem:focus-within .period,
+  .skills article:hover h3,
+  .skills article:focus-within h3 {
+    color: var(--mint);
+  }
+  .skillNode {
+    transition: box-shadow var(--motion-interaction) ease, transform var(--motion-interaction) ease;
+  }
+  .skills article:hover .skillNode,
+  .skills article:focus-within .skillNode {
+    box-shadow: 0 0 0 5px #5ef2a61a;
+    transform: scale(1.15);
+  }
+  .composer:focus-within {
+    border-color: #536474;
+    box-shadow: 0 14px 34px #00000022;
   }
 }
 @keyframes detailEntrance {

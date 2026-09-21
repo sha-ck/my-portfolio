@@ -1,7 +1,23 @@
-import type { ProjectCaseStudy } from "../types";
-import Image from "next/image";
-import s from "../portfolio.module.css";
+'use client';
+
+import { useEffect, useState } from 'react';
+import type { ProjectCaseStudy } from '../types';
+import Image from 'next/image';
+import s from '../portfolio.module.css';
 export function Projects({ items }: { items: ProjectCaseStudy[] }) {
+  const [selectedId, setSelectedId] = useState('');
+
+  useEffect(() => {
+    const root = document.querySelector<HTMLElement>('[data-immersive-root]');
+    if (!root) return;
+    const selectedIndex = items.findIndex((item) => item.id === selectedId);
+    root.dataset.selectedProject = String(Math.max(0, selectedIndex));
+    root.dispatchEvent(new Event('projectselect'));
+    return () => {
+      delete root.dataset.selectedProject;
+    };
+  }, [items, selectedId]);
+
   return (
     <section
       id="projects"
@@ -21,7 +37,13 @@ export function Projects({ items }: { items: ProjectCaseStudy[] }) {
       </div>
       <div className={s.projects}>
         {items.map((item, index) => (
-          <article data-reveal id={item.id} className={s.project} key={item.id}>
+          <article
+            data-reveal
+            id={item.id}
+            className={`${s.project} ${selectedId === item.id ? s.projectSelected : ''}`}
+            key={item.id}
+            data-selected={selectedId === item.id ? 'true' : undefined}
+          >
             <div className={s.projectArt} data-variant={index}>
               {item.media?.[0] ? (
                 <Image
@@ -57,6 +79,17 @@ export function Projects({ items }: { items: ProjectCaseStudy[] }) {
               </div>
               <h3>{item.name}</h3>
               <p className={s.projectProblem}>{item.problem}</p>
+              <button
+                className={s.projectSelect}
+                type="button"
+                aria-pressed={selectedId === item.id}
+                onClick={() => setSelectedId(item.id)}
+              >
+                {selectedId === item.id ? 'System selected' : 'Select system'}
+                <span aria-hidden="true">
+                  {selectedId === item.id ? '·' : '↗'}
+                </span>
+              </button>
               <details>
                 <summary>
                   Inside the engineering <span aria-hidden="true">+</span>

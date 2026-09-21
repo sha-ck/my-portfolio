@@ -71,11 +71,14 @@ export function SceneDirector({
             nearest = index;
           }
         });
+        const selected = Number(root.dataset.selectedProject);
         const interacted = projects[interactedProject]?.getBoundingClientRect();
         controls.current.projectIndex =
-          interacted && interacted.bottom > 112 && interacted.top < innerHeight
-            ? interactedProject
-            : nearest;
+          Number.isInteger(selected) && selected >= 0 && selected < projects.length
+            ? selected
+            : interacted && interacted.bottom > 112 && interacted.top < innerHeight
+              ? interactedProject
+              : nearest;
       }
       root.dataset.scene = state.id;
       // One director owns section state for both navigation and the canvas.
@@ -152,6 +155,7 @@ export function SceneDirector({
       interactedProject = article ? projects.indexOf(article) : -1;
       schedule();
     };
+    const onProjectSelect = () => schedule();
     const resize =
       typeof ResizeObserver === "undefined"
         ? null
@@ -169,6 +173,7 @@ export function SceneDirector({
     root.addEventListener("pointerleave", resetPointer);
     root.addEventListener("pointerover", onProjectInteraction);
     root.addEventListener("focusin", onProjectInteraction);
+    root.addEventListener("projectselect", onProjectSelect);
     motion.addEventListener("change", onMotion);
     document.addEventListener("visibilitychange", onVisibility);
     window.addEventListener("pageshow", onHash);
@@ -183,6 +188,7 @@ export function SceneDirector({
       root.removeEventListener("pointerleave", resetPointer);
       root.removeEventListener("pointerover", onProjectInteraction);
       root.removeEventListener("focusin", onProjectInteraction);
+      root.removeEventListener("projectselect", onProjectSelect);
       motion.removeEventListener("change", onMotion);
       document.removeEventListener("visibilitychange", onVisibility);
       window.removeEventListener("pageshow", onHash);
