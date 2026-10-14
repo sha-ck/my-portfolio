@@ -19,12 +19,14 @@
       "version": "1.0.0",
       "resolved": "ghcr.io/dotnet/aspire-devcontainer-feature/dotnetaspire@sha256:21cf32b051d4afc63f3301ac2d1343394c6be53dbf370f9bf9e7b63c78aefd9b",
       "integrity": "sha256:21cf32b051d4afc63f3301ac2d1343394c6be53dbf370f9bf9e7b63c78aefd9b",
-      "dependsOn": ["ghcr.io/devcontainers/features/dotnet"]
+      "dependsOn": [
+        "ghcr.io/devcontainers/features/dotnet"
+      ]
     },
     "ghcr.io/postfinance/devcontainer-features/dotnet:1": {
-      "version": "1.0.0",
-      "resolved": "ghcr.io/postfinance/devcontainer-features/dotnet@sha256:22bce48a820093d32fb49f321fd2ab37b18e0b0e68d73b3edd13bcffb9efaf63",
-      "integrity": "sha256:22bce48a820093d32fb49f321fd2ab37b18e0b0e68d73b3edd13bcffb9efaf63"
+      "version": "1.0.1",
+      "resolved": "ghcr.io/postfinance/devcontainer-features/dotnet@sha256:2ce9d706a751c4eba6407a890360b4bb490919e0f5b1c4673a125fbade2c8239",
+      "integrity": "sha256:2ce9d706a751c4eba6407a890360b4bb490919e0f5b1c4673a125fbade2c8239"
     },
     "ghcr.io/wxw-matt/devcontainer-features/command_runner:0": {
       "version": "0.5.0",
