@@ -33,7 +33,7 @@ Current verification: see the refinement entry in [the verification record](./IM
 - [x] `app/sitemap.ts` created; lists only `/`, excludes `/lab`.
 - [x] `app/robots.ts` references the sitemap and allows crawling. `/lab` supplies `noindex, nofollow` metadata; crawling remains allowed so that directive can be read.
 - [x] `app/lab/page.tsx` has `robots: { index: false, follow: false }` metadata.
-- [ ] Production domain confirmed for sitemap/robots URLs (`shanidcherukattil.com`). Requires owner confirmation.
+- [ ] Production domain confirmed for sitemap/robots URLs (`https://shanid-portfolio.shanid0cherukattil.workers.dev/`). Requires owner confirmation.
 - [x] `/lab` `noindex, nofollow` confirmed in rendered server metadata and Chrome during refinement.
 
 Contract: [Blueprint](./IMMERSIVE-AI-PORTFOLIO-BLUEPRINT.md) and [Implementation plan](./IMMERSIVE-AI-IMPLEMENTATION-PLAN.md). These proposed target requirements take precedence over conflicting legacy guidance only after explicit approval.
@@ -63,7 +63,7 @@ Contract: [Blueprint](./IMMERSIVE-AI-PORTFOLIO-BLUEPRINT.md) and [Implementation
 ## Production QA
 
 - [x] Metadata and social preview are correct for the current working tree (`app/page.tsx`, `app/robots.ts`, `app/sitemap.ts`, and `app/lab/page.tsx`).
-- [ ] Favicon loads.
+- [x] Favicon loads (`public/favicon.ico` multi-resolution ICO and `app/icon.svg`).
 - [x] No console errors in the recorded browser checks.
 - [ ] Lighthouse checks meet targets.
 - [ ] Contact preparation and external draft handoffs work in production; confirmed delivery is not claimed.

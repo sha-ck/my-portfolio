@@ -27,7 +27,10 @@ export const metadata: Metadata = {
     "Frontend architecture, performance and connected applications. An experimental portfolio by Shanid Cherukattil.",
   robots: { index: false, follow: false },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
     shortcut: "/favicon.ico",
     apple: "/favicon.ico",
   },

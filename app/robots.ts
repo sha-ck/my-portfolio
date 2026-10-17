@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://shanidcherukattil.com/sitemap.xml",
+    sitemap: "https://shanid-portfolio.shanid0cherukattil.workers.dev/sitemap.xml",
   };
 }
