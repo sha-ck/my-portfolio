@@ -39,7 +39,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${display.variable} ${body.variable} ${mono.variable}`}>{children}</body>
+      <body className={`${display.variable} ${body.variable} ${mono.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }

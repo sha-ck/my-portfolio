@@ -465,7 +465,9 @@
 }
 .projectSelected {
   border-color: var(--mint);
-  box-shadow: 0 0 0 1px #5ef2a622, 0 18px 50px #00000033;
+  box-shadow:
+    0 0 0 1px #5ef2a622,
+    0 18px 50px #00000033;
 }
 .projectSelect {
   display: flex;
@@ -1062,7 +1064,9 @@
     color: var(--mint);
   }
   .skillNode {
-    transition: box-shadow var(--motion-interaction) ease, transform var(--motion-interaction) ease;
+    transition:
+      box-shadow var(--motion-interaction) ease,
+      transform var(--motion-interaction) ease;
   }
   .skills article:hover .skillNode,
   .skills article:focus-within .skillNode {

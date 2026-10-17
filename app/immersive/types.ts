@@ -34,7 +34,7 @@ export interface AiPractice {
   id: string;
   name: string;
   description: string;
-  evidence: { kind: 'experience' | 'project'; id: string }[];
+  evidence: { kind: "experience" | "project"; id: string }[];
 }
 export interface PortfolioContent {
   identity: {

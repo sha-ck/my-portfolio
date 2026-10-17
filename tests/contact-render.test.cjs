@@ -29,7 +29,7 @@ const {
 const {
   Skills,
   filterRenderableAiPractices,
-} = require('../app/immersive/sections/Skills.tsx');
+} = require("../app/immersive/sections/Skills.tsx");
 
 test("server-rendered composer cannot submit personal input before hydration", () => {
   const html = renderToStaticMarkup(
@@ -56,25 +56,25 @@ test("empty contact configuration is honest before hydration", () => {
   assert.doesNotMatch(html, /href="(?:mailto:|https:\/\/wa.me)/);
 });
 
-test('only evidence-backed AI practices render while the approved identity remains intact', () => {
+test("only evidence-backed AI practices render while the approved identity remains intact", () => {
   const practices = [
     {
-      id: 'verified-ai-practice',
-      name: 'Verified AI Practice',
-      description: 'Evidence-backed and eligible to render.',
-      evidence: [{ kind: 'project', id: 'ai-project' }],
+      id: "verified-ai-practice",
+      name: "Verified AI Practice",
+      description: "Evidence-backed and eligible to render.",
+      evidence: [{ kind: "project", id: "ai-project" }],
     },
     {
-      id: 'unsupported-ai-practice',
-      name: 'Unsupported AI Practice',
-      description: 'No evidence; should not render.',
+      id: "unsupported-ai-practice",
+      name: "Unsupported AI Practice",
+      description: "No evidence; should not render.",
       evidence: [],
     },
   ];
 
   assert.deepEqual(
     filterRenderableAiPractices(practices).map((practice) => practice.id),
-    ['verified-ai-practice'],
+    ["verified-ai-practice"],
   );
 
   const html = renderToStaticMarkup(
@@ -82,12 +82,12 @@ test('only evidence-backed AI practices render while the approved identity remai
       groups: [],
       projects: [
         {
-          id: 'ai-project',
-          name: 'AI project',
-          users: 'teams',
-          problem: 'needs',
+          id: "ai-project",
+          name: "AI project",
+          users: "teams",
+          problem: "needs",
           responsibilities: [],
-          architecture: 'system',
+          architecture: "system",
           technologies: [],
           outcomes: [],
         },

@@ -4,14 +4,14 @@ Status: blocked pending evidence confirmation. The lab route carries existing fr
 
 ## Evidence status
 
-| Area | Status | Required evidence | Current position |
-| --- | --- | --- | --- |
-| AI project case studies | Blocked | Real project name, visibility, users, problem, responsibilities, architecture, technologies used, measurable outcome, approved links/media | No confirmed AI project material has been added to the public content set. |
-| Employment history | Blocked | Exact role titles, dates, employers, responsibility scope, and any AI-related work tied to those periods | Existing employment entries are present but not yet validated as the launch source of truth. |
-| Contact ownership | Blocked | Verified personal email, confirmed LinkedIn URL, optional approved WhatsApp number | Email and LinkedIn are configured, but public exposure still needs explicit owner confirmation. |
-| Media and preview assets | Blocked | Portrait reuse approval, social preview images, and any public media rights | Portrait path and metadata are present, but final production approval is still pending. |
-| Domain and canonical metadata | Blocked | Confirmed production domain and canonical/social preview destinations | The lab remains isolated with no production swap. |
-| Headline / hybrid positioning | Blocked | Approved AI identity and title framing supported by source evidence | Current copy keeps the approved identity label but does not claim unverified AI outcomes. |
+| Area                          | Status  | Required evidence                                                                                                                          | Current position                                                                                |
+| ----------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| AI project case studies       | Blocked | Real project name, visibility, users, problem, responsibilities, architecture, technologies used, measurable outcome, approved links/media | No confirmed AI project material has been added to the public content set.                      |
+| Employment history            | Blocked | Exact role titles, dates, employers, responsibility scope, and any AI-related work tied to those periods                                   | Existing employment entries are present but not yet validated as the launch source of truth.    |
+| Contact ownership             | Blocked | Verified personal email, confirmed LinkedIn URL, optional approved WhatsApp number                                                         | Email and LinkedIn are configured, but public exposure still needs explicit owner confirmation. |
+| Media and preview assets      | Blocked | Portrait reuse approval, social preview images, and any public media rights                                                                | Portrait path and metadata are present, but final production approval is still pending.         |
+| Domain and canonical metadata | Blocked | Confirmed production domain and canonical/social preview destinations                                                                      | The lab remains isolated with no production swap.                                               |
+| Headline / hybrid positioning | Blocked | Approved AI identity and title framing supported by source evidence                                                                        | Current copy keeps the approved identity label but does not claim unverified AI outcomes.       |
 
 ## Required before launch
 

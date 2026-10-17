@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable react-hooks/immutability */
 import { useEffect, type MutableRefObject } from "react";
 import {
   resolveScene,
@@ -74,9 +75,13 @@ export function SceneDirector({
         const selected = Number(root.dataset.selectedProject);
         const interacted = projects[interactedProject]?.getBoundingClientRect();
         controls.current.projectIndex =
-          Number.isInteger(selected) && selected >= 0 && selected < projects.length
+          Number.isInteger(selected) &&
+          selected >= 0 &&
+          selected < projects.length
             ? selected
-            : interacted && interacted.bottom > 112 && interacted.top < innerHeight
+            : interacted &&
+                interacted.bottom > 112 &&
+                interacted.top < innerHeight
               ? interactedProject
               : nearest;
       }
