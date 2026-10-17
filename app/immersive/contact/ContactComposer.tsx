@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState, useSyncExternalStore } from "react";
 import type { FormEvent } from "react";
 import type { PortfolioContent } from "../types";
 import {
@@ -11,13 +11,18 @@ import {
 import type { ContactErrors, ContactInput } from "./contact";
 import s from "../portfolio.module.css";
 
+const subscribe = () => () => {};
+
 export function ContactComposer({
   config,
 }: {
   config: PortfolioContent["contact"];
 }) {
-  const [hydrated, setHydrated] = useState(false);
-  useEffect(() => setHydrated(true), []);
+  const hydrated = useSyncExternalStore(
+    subscribe,
+    () => true,
+    () => false,
+  );
   const [input, setInput] = useState<ContactInput>({
     name: "",
     email: "",

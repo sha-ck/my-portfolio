@@ -6,10 +6,10 @@ This folder contains the product and implementation requirements for Shanid Cher
 
 Documentation approved on 2026-09-21. Production cutover completed — immersive portfolio is now the production homepage at `/`. Content evidence and deployment authorization remain pending.
 
-| Surface | Current state | Contract |
-| --- | --- | --- |
-| `/` | Immersive Living System portfolio | Production homepage |
-| `/lab` | Removed after cutover | — |
+| Surface          | Current state                                      | Contract                    |
+| ---------------- | -------------------------------------------------- | --------------------------- |
+| `/`              | Immersive Living System portfolio                  | Production homepage         |
+| `/lab`           | Removed after cutover                              | —                           |
 | Content evidence | AI projects, employment, contact ownership pending | Owner confirmation required |
 
 Read the [canonical blueprint](./IMMERSIVE-AI-PORTFOLIO-BLUEPRINT.md), then the [ordered implementation plan](./IMMERSIVE-AI-IMPLEMENTATION-PLAN.md). Both were approved on 2026-09-21. Each existing document now separates the target addendum from legacy guidance. Baseline rebuild and semantic browser verification are recorded in the evidence documents below.

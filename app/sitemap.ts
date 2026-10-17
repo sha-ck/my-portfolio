@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export const dynamic = "force-static";
+
+export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: "https://shanidcherukattil.com/",
